@@ -1,6 +1,6 @@
-/* body {
+body {
   background-color: rgb(40, 38, 38);
-} */
+}
 header {
   box-sizing: border-box;
   text-align: center;
@@ -40,10 +40,10 @@ main {
 .accordion-button {
   background-color: inherit !important;
 }
-/* .accordion-item {
+.accordion-item {
   margin-bottom: 10px;
   background-color: rgb(171, 171, 171);
-} */
+}
 .accordion-body {
   padding: 0 10px;
 }
@@ -59,7 +59,7 @@ section {
   border-radius: 5px;
   position: relative;
   min-height: 28px;
-  /* background-color: antiquewhite; */
+  background-color: antiquewhite;
   box-shadow: 2px 4px 5px 0px rgba(0, 0, 0, 0.5);
 }
 .title {
@@ -70,7 +70,7 @@ section {
   padding: 0 5px;
   font-style: italic;
   color: black;
-  /* background-color: inherit; */
+  background-color: inherit;
   border-radius: 10px;
 }
 .description {

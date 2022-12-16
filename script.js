@@ -327,18 +327,6 @@ const menuBody = document.getElementById("menu-body");
 const menuBtn = document.getElementById("btn-group");
 var DATA = [];
 var menutype = [];
-const nums = [
-  "One",
-  "Two",
-  "Three",
-  "Four",
-  "Five",
-  "Six",
-  "Seven",
-  "Eight",
-  "Nine",
-  "Ten",
-];
 menuTypes();
 displayMenu();
 function menuTypes() {
@@ -358,53 +346,45 @@ function displayMenu() {
   menutype.forEach((type) => {
     menuBtn.innerHTML += `
     <a class="customref" href="#${type}">
-      <button type="button" class="btn btn-primary">
+      <button type="button" class="btn">
         <img class="icons-b" src="./icons/${type}.png">
         <div>${type}</div>
       </button>
     </a>`;
     let item = document.createElement("div");
-    item.className = "accordion-item";
+    item.className = "accordion-category";
     item.id = `${type}`;
     item.innerHTML = `
-    <h2 class="accordion-header" 
-        id="panelsStayOpen-heading${nums[menutype.indexOf(type)]}"
+    <span class="category-header" 
+        id="heading${menutype.indexOf(type)}"
       >
-      <button
-          class="accordion-button collapsed"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#panelsStayOpen-collapse${
-            nums[menutype.indexOf(type)]
-          }"
-          aria-expanded="false"
-          aria-controls="panelsStayOpen-collapse${nums[menutype.indexOf(type)]}"
-        >
+      <button onclick=closeOpen('${menutype.indexOf(
+        type
+      )}') class="category-button" type="button">
         <img class="icons-m" src="./icons/${type}.png">
         ${capitalizeFirstLetter(type)}
+        <span id ="closer${menutype.indexOf(
+          type
+        )}" class="accordion-functionality"><i class="fa fa-angle-up"></i></span>
       </button>
-    </h2>`;
+    </span>`;
     let menubody = document.createElement("div");
-    menubody.id = `panelsStayOpen-collapse${nums[menutype.indexOf(type)]}`;
-    menubody.className = `accordion-collapse collapse show`;
-    menubody.setAttribute(
-      "aria-labelledby",
-      `panelsStayOpen-heading${nums[menutype.indexOf(type)]}`
-    );
+    menubody.className = `accordion-collapse`;
     item.appendChild(menubody);
     let accordeonBody = document.createElement("div");
     accordeonBody.className = "accordion-body";
+    accordeonBody.id = `accordion-body${menutype.indexOf(type)}`;
     menubody.appendChild(accordeonBody);
     //diplaying each item in its own menu type
     data.forEach((element) => {
       if (element.category == type && element.category != undefined) {
         if (element.name !== undefined) {
           accordeonBody.innerHTML += `
-              <section>
-                <span class="title">${element.name}</span>
+              <fieldset>
+                <legend class="title">${element.name}</legend>
                 <div class="description">${element.description}</div>
                 <div class="price">${element.price}</div>
-              </section>
+              </fieldset>
           `;
         }
       }
@@ -417,10 +397,22 @@ function capitalizeFirstLetter(s) {
   return s[0].toUpperCase() + s.slice(1);
 }
 
+function closeOpen(elm) {
+  let target = document.getElementById(`accordion-body${elm}`);
+  let closer = document.getElementById(`closer${elm}`);
+  if (target.style.display != "none") {
+    target.style.display = "none";
+    closer.innerHTML = '<i class="fa fa-angle-down"></i>';
+  } else {
+    target.style.display = "block";
+    closer.innerHTML = '<i class="fa fa-angle-up"></i>';
+  }
+}
+
 // footer
 let date = new Date().getFullYear();
 let copy = document.getElementById("copy");
-copy.innerHTML = `&copy; ${date}`;
+copy.innerHTML = `copyright &copy; ${date}`;
 
 const scrollLinks = document.querySelectorAll(".customref");
 scrollLinks.forEach((link) => {

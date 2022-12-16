@@ -1,0 +1,121 @@
+/* body {
+  background-color: rgb(40, 38, 38);
+} */
+header {
+  box-sizing: border-box;
+  text-align: center;
+  position: relative;
+  color: white;
+  font-size: 30px;
+  padding: 0 0 5px 0;
+}
+header img {
+  height: 45px;
+  border-radius: 5px;
+}
+
+main {
+  width: 90vw;
+  max-width: 600px;
+  margin: auto;
+}
+.btn-group {
+  margin: 0 0 15px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  overflow-x: auto;
+}
+.btn-primary {
+  width: 80px;
+  font-size: 10px;
+  border: 1px solid black;
+}
+.icons-b {
+  width: 30px;
+}
+.icons-m {
+  width: 1.3em;
+  margin: 2px 10px 0 0;
+}
+.accordion-button {
+  background-color: inherit !important;
+}
+/* .accordion-item {
+  margin-bottom: 10px;
+  background-color: rgb(171, 171, 171);
+} */
+.accordion-body {
+  padding: 0 10px;
+}
+.accordion-button {
+  padding: 6px 20px;
+  border-bottom: 1px solid;
+}
+section {
+  display: block;
+  margin: 17px 0;
+  padding: 0 0.5em;
+  border: 1px groove black;
+  border-radius: 5px;
+  position: relative;
+  min-height: 28px;
+  /* background-color: antiquewhite; */
+  box-shadow: 2px 4px 5px 0px rgba(0, 0, 0, 0.5);
+}
+.title {
+  position: absolute;
+  font-size: 1em;
+  top: -0.9em;
+  background-color: white;
+  padding: 0 5px;
+  font-style: italic;
+  color: black;
+  /* background-color: inherit; */
+  border-radius: 10px;
+}
+.description {
+  margin-top: 5px;
+  font-size: 0.8em;
+  color: rgb(53, 52, 52);
+}
+.price {
+  font-size: 1em;
+  padding: 0 5px;
+  text-align: right;
+  color: black;
+  font-size: 0.9em;
+}
+
+footer {
+  position: relative;
+  margin-top: 20px;
+  max-width: 600px;
+  min-width: 180px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  display: grid;
+  grid-template-rows: auto auto;
+  color: lightgray;
+  text-align: center;
+}
+footer label {
+  margin-right: 5px;
+  vertical-align: middle;
+}
+#credit {
+  font-size: 9px;
+  text-align: end;
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+#copy {
+  font-size: 10px;
+  text-align: left;
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+a {
+  color: white;
+  text-decoration: none;
+}

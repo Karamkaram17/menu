@@ -50,16 +50,28 @@ header {
   text-align: center;
   color: var(--headerFontcolor);
   background: var(--headerBackground);
-  padding-top: 5px;
-  height: 40vh;
-  display: grid;
-  grid-template-rows: 1fr 30px 50px;
+  height: calc(97vw);
+  position: relative;
 }
 header img {
-  height: 150px;
+  width: 90vw;
+  max-width: 600px;
   border-radius: 5px;
   margin: auto;
+  margin-top: 4vw;
   box-shadow: 2px 4px 5px 0px rgba(0, 0, 0, 0.5);
+}
+header p:first-of-type {
+  position: absolute;
+  z-index: 600;
+  bottom: 20px;
+  width: 100vw;
+}
+header p:last-of-type {
+  position: absolute;
+  z-index: 600;
+  bottom: 0;
+  width: 100vw;
 }
 header a {
   color: var(--headerFontColor) !important;
@@ -72,14 +84,16 @@ header i {
 /* ============= btn div ============= */
 #btn-group {
   margin: 5px auto 15px auto;
+  max-width: 600px;
   display: flex;
   gap: 2px;
   overflow-x: auto;
   position: sticky;
   top: 0px;
   z-index: 1000;
-  width: 92vw;
+  width: 90vw;
   background-color: var(--btnDivBackgroundColor);
+  border-radius: 5px;
 }
 .btn {
   width: 80px;

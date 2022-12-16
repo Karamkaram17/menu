@@ -357,29 +357,33 @@ function menuTypes() {
 function displayMenu() {
   menutype.forEach((type) => {
     menuBtn.innerHTML += `
-    <button type="button" class="btn btn-primary"><a href="#${type}"><img class="icons-b" src="./icons/${type}.png"><div>${type}</div></a></button>`;
+    <a class="customref" href="#${type}">
+      <button type="button" class="btn btn-primary">
+        <img class="icons-b" src="./icons/${type}.png">
+        <div>${type}</div>
+      </button>
+    </a>`;
     let item = document.createElement("div");
     item.className = "accordion-item";
     item.id = `${type}`;
     item.innerHTML = `
-    <h2 class="accordion-header" id="panelsStayOpen-heading${
-      nums[menutype.indexOf(type)]
-    }">
-            <button
-              class="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#panelsStayOpen-collapse${
-                nums[menutype.indexOf(type)]
-              }"
-              aria-expanded="false"
-              aria-controls="panelsStayOpen-collapse${
-                nums[menutype.indexOf(type)]
-              }"><img class="icons-m" src="./icons/${type}.png">
-              ${capitalizeFirstLetter(type)}
-            </button>
-          </h2>
-    `;
+    <h2 class="accordion-header" 
+        id="panelsStayOpen-heading${nums[menutype.indexOf(type)]}"
+      >
+      <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#panelsStayOpen-collapse${
+            nums[menutype.indexOf(type)]
+          }"
+          aria-expanded="false"
+          aria-controls="panelsStayOpen-collapse${nums[menutype.indexOf(type)]}"
+        >
+        <img class="icons-m" src="./icons/${type}.png">
+        ${capitalizeFirstLetter(type)}
+      </button>
+    </h2>`;
     let menubody = document.createElement("div");
     menubody.id = `panelsStayOpen-collapse${nums[menutype.indexOf(type)]}`;
     menubody.className = `accordion-collapse collapse show`;
@@ -418,33 +422,20 @@ let date = new Date().getFullYear();
 let copy = document.getElementById("copy");
 copy.innerHTML = `&copy; ${date}`;
 
-const scrollLinks = document.querySelectorAll("b");
+const scrollLinks = document.querySelectorAll(".customref");
 scrollLinks.forEach((link) => {
   link.addEventListener("click", (e) => {
-    console.log(e);
-    // prevent default
     e.preventDefault();
     // navigate to specific spot
     const id = e.currentTarget.getAttribute("href").slice(1);
     const element = document.getElementById(id);
 
-    const navHeight = navbar.getBoundingClientRect().height;
-    const containerHeight = linksContainer.getBoundingClientRect().height;
-    const fixedNav = navbar.classList.contains("fixed-nav");
+    const navHeight = menuBtn.getBoundingClientRect().height;
     let position = element.offsetTop - navHeight;
-
-    if (!fixedNav) {
-      position = position - navHeight;
-    }
-    if (navHeight > 82) {
-      position = position + containerHeight;
-    }
 
     window.scrollTo({
       left: 0,
       top: position,
     });
-    // close
-    linksContainer.style.height = 0;
   });
 });

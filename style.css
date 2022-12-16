@@ -14,16 +14,22 @@ header img {
   border-radius: 5px;
 }
 
+.btn-group {
+  margin: auto;
+  margin-bottom: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  overflow-x: auto;
+  position: sticky;
+  top: 0px;
+  z-index: 1000;
+  width: 92vw;
+  background-color: inherit;
+}
 main {
   width: 90vw;
   max-width: 600px;
   margin: auto;
-}
-.btn-group {
-  margin: 0 0 15px 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  overflow-x: auto;
 }
 .btn-primary {
   width: 80px;
@@ -85,7 +91,41 @@ section {
   color: black;
   font-size: 0.9em;
 }
-
+.whatsapp {
+  position: fixed;
+  bottom: 30px;
+  left: 29px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(54, 147, 54);
+  font-size: 1.4em;
+}
+#upbtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: rgb(65, 65, 245);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#upbtn a:link,
+#upbtn a:visited,
+#upbtn a:hover,
+#upbtn a:active {
+  color: black;
+  text-decoration: none;
+}
+#upbtn i {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: white;
+}
 footer {
   position: relative;
   margin-top: 20px;

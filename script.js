@@ -423,7 +423,7 @@ scrollLinks.forEach((link) => {
     const element = document.getElementById(id);
 
     const navHeight = menuBtn.getBoundingClientRect().height;
-    let position = element.offsetTop - navHeight;
+    let position = element.offsetTop - navHeight - 10;
 
     window.scrollTo({
       left: 0,

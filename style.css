@@ -56,9 +56,10 @@ header {
   grid-template-rows: 1fr 30px 50px;
 }
 header img {
-  height: 70px;
+  height: 150px;
   border-radius: 5px;
   margin: auto;
+  box-shadow: 2px 4px 5px 0px rgba(0, 0, 0, 0.5);
 }
 header a {
   color: var(--headerFontColor) !important;

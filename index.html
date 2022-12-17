@@ -11,56 +11,62 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header id="header">
-      <img src="logos/main-logo.png" alt="Moonlight-logo" />
-      <p>
-        <i>&#x26B2;</i>
-        <a target="_blank" href="https://goo.gl/maps/KHyCns9iBLu6aGkE8"
-          >Ehden , Near Saydet Al Hosn</a
-        >
-      </p>
-      <!-- <p>
+    <div id="loading-screen">
+      <p>Loading</p>
+      <div class="spinner"></div>
+    </div>
+    <div id="body" style="display: none">
+      <header id="header">
+        <img src="logos/main-logo.png" alt="Moonlight-logo" />
+        <p>
+          <i>&#x26B2;</i>
+          <a target="_blank" href="https://goo.gl/maps/KHyCns9iBLu6aGkE8"
+            >Ehden , Near Saydet Al Hosn</a
+          >
+        </p>
+        <!-- <p>
         <i class="fa">&#xf095;</i>
         <a href="tel:+9613574745"> 03 574 745 </a>
       </p> -->
-    </header>
+      </header>
 
-    <main>
-      <div id="btn-group"></div>
-      <div id="menu-body"></div>
-    </main>
+      <main>
+        <div id="btn-group"></div>
+        <div id="menu-body"></div>
+      </main>
 
-    <div id="wpbtn">
-      <a class="whatsapp" href="https://wa.me/+9613574745" target="_blank"
-        ><i class="fa fa-whatsapp"></i
-      ></a>
-    </div>
-
-    <div id="upbtn">
-      <a class="customref" href="#header"><i class="fa fa-angle-up"></i></a>
-    </div>
-
-    <footer>
-      <a
-        ><label
-          ><i style="font-size: 25px; color: darkblue" class="fa"
-            >&#xf095;</i
-          ></label
-        >03 574 745</a
-      >
-      <div style="display: grid; grid-template-columns: 1fr 1fr">
-        <div id="copy"></div>
-        <div id="credit">
-          Developped by
-          <a
-            href="https://www.linkedin.com/in/karam-b-karam"
-            target="_blank"
-            id=""
-            >Karam</a
-          >
-        </div>
+      <div id="wpbtn">
+        <a class="whatsapp" href="https://wa.me/+9613574745" target="_blank"
+          ><i class="fa fa-whatsapp"></i
+        ></a>
       </div>
-    </footer>
+
+      <div id="upbtn">
+        <a class="customref" href="#header"><i class="fa fa-angle-up"></i></a>
+      </div>
+
+      <footer>
+        <a
+          ><label
+            ><i style="font-size: 25px; color: darkblue" class="fa"
+              >&#xf095;</i
+            ></label
+          >03 574 745</a
+        >
+        <div style="display: grid; grid-template-columns: 1fr 1fr">
+          <div id="copy"></div>
+          <div id="credit">
+            Developped by
+            <a
+              href="https://www.linkedin.com/in/karam-b-karam"
+              target="_blank"
+              id=""
+              >Karam</a
+            >
+          </div>
+        </div>
+      </footer>
+    </div>
 
     <script src="script.js"></script>
   </body>

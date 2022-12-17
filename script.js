@@ -323,12 +323,19 @@ const data = [
   },
 ];
 
+const body = document.querySelector("#body");
+window.onload = function () {
+  body.style.display = "block";
+  document.getElementById("loading-screen").style.display = "none";
+  menuTypes();
+  displayMenu();
+};
+
 const menuBody = document.getElementById("menu-body");
 const menuBtn = document.getElementById("btn-group");
 var DATA = [];
 var menutype = [];
-menuTypes();
-displayMenu();
+
 function menuTypes() {
   const menutypes = [];
   data.forEach((element) => {
@@ -396,7 +403,7 @@ function displayMenu() {
 function capitalizeFirstLetter(s) {
   return s[0].toUpperCase() + s.slice(1);
 }
-
+//inline for opening and closing categorys
 function closeOpen(elm) {
   let target = document.getElementById(`accordion-body${elm}`);
   let closer = document.getElementById(`closer${elm}`);
@@ -414,6 +421,7 @@ let date = new Date().getFullYear();
 let copy = document.getElementById("copy");
 copy.innerHTML = `copyright &copy; ${date}`;
 
+//links
 const scrollLinks = document.querySelectorAll(".customref");
 scrollLinks.forEach((link) => {
   link.addEventListener("click", (e) => {

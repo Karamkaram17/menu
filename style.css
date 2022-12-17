@@ -267,3 +267,50 @@ footer a {
     right: calc(50vw - 300px);
   }
 }
+
+/* loading page */
+#loading-screen {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  place-content: center;
+}
+#loading-screen p {
+  text-align: right;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+#loading-screen .spinner {
+  width: 40px;
+  height: 40px;
+  margin: 16px auto auto 50px;
+  background-color: white;
+  border-radius: 100%;
+  -webkit-animation: sk-scaleout 1s infinite ease-in-out;
+  animation: sk-scaleout 1s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-scaleout {
+  0% {
+    -webkit-transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes sk-scaleout {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 0;
+  }
+}

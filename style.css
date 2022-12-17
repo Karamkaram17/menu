@@ -156,13 +156,13 @@ main {
 }
 .accordion-collapse {
   margin-bottom: 10px;
-  border-top: 1px solid;
 }
 .accordion-body {
   background: var(--contentBodyBackgroundColor);
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
   padding: 5px;
+  border-top: 1px solid black;
 }
 .accordion-body fieldset {
   background: var(--contentItemBackgroundolor);

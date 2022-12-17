@@ -409,9 +409,11 @@ function closeOpen(elm) {
   let closer = document.getElementById(`closer${elm}`);
   if (target.style.display != "none") {
     target.style.display = "none";
+    target.style.borderTop = "none";
     closer.innerHTML = '<i class="fa fa-angle-down"></i>';
   } else {
     target.style.display = "block";
+    target.style.borderTop = "1px solid black";
     closer.innerHTML = '<i class="fa fa-angle-up"></i>';
   }
 }

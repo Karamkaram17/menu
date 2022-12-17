@@ -1,35 +1,36 @@
 :root {
   /* body */
-  --bodyColor: rgb(41, 41, 41);
+  --bodyColor: url("./backgrounds/background.jpg");
   /* header */
   --headerBackground: inherit;
   --headerFontColor: white;
   --headerFontSize: 30px;
   /* btn div */
-  --btnDivBackgroundColor: rgb(41, 41, 41);
-  --btnDivIndividualBackgroundColor: lightblue;
-  --btnDivFontColor: rgb(33, 33, 152);
+  --btnDivBackgroundColor: inherit;
+  --btnDivIndividualBackgroundColor: rgb(222, 189, 146);
+  --btnDivFontColor: darkblue;
   --btnDivFontSize: 10px;
   /* menu */
   --contentHeaderFontSize: 1rem;
   --contentHeaderFontcolor: rgb(8, 8, 97);
-  --contentHeaderBackgroundColor: rgb(94, 94, 94);
+  --contentHeaderBackgroundColor: inherit;
 
-  --contentBodyBackgroundColor: rgb(103, 103, 110);
-  --contentItemBackgroundolor: rgb(80, 70, 70);
+  --contentBodyBackgroundColor: inherit;
+  --contentItemBackgroundolor: inherit;
 
-  --itemNameColor: white;
+  --itemNameColor: darkblue;
   --itemNameFontSize: 1rem;
 
-  --descriptionColor: white;
+  --descriptionColor: rgb(9, 9, 77);
   --descriptionFontSize: 0.8rem;
 
-  --priceColor: white;
+  --priceColor: darkblue;
   --priceFontSize: 0.9rem;
   /* footer */
   --footerBackground: inherit;
-  --footerFontColor: lightgray;
+  --footerFontColor: black;
 }
+/*--bodyColor: rgb(41, 41, 41); */
 
 /* ============= reset ============= */
 a,
@@ -50,28 +51,21 @@ header {
   text-align: center;
   color: var(--headerFontcolor);
   background: var(--headerBackground);
-  height: calc(97vw);
+  height: calc(103vw);
   position: relative;
 }
 header img {
-  width: 90vw;
+  width: 100.5vw;
   max-width: 600px;
-  border-radius: 5px;
   margin: auto;
-  margin-top: 4vw;
   box-shadow: 2px 4px 5px 0px rgba(0, 0, 0, 0.5);
-}
-header p:first-of-type {
-  position: absolute;
-  z-index: 600;
-  bottom: 20px;
-  width: 100vw;
 }
 header p:last-of-type {
   position: absolute;
   z-index: 600;
   bottom: 0;
   width: 100vw;
+  font-size: 0.9rem;
 }
 header a {
   color: var(--headerFontColor) !important;
@@ -86,7 +80,6 @@ header i {
   margin: 5px auto 15px auto;
   max-width: 600px;
   display: flex;
-  gap: 2px;
   overflow-x: auto;
   position: sticky;
   top: 0px;
@@ -94,6 +87,9 @@ header i {
   width: 90vw;
   background-color: var(--btnDivBackgroundColor);
   border-radius: 5px;
+  border: 1px solid black;
+  border-top: none;
+  border-bottom: none;
 }
 .btn {
   width: 80px;
@@ -124,6 +120,7 @@ main {
   display: flex;
   align-items: center;
   font-size: var(--contentHeaderFontSize);
+  font-weight: bold;
   color: var(--contentHeaderFontcolor);
   background: var(--contentHeaderBackgroundColor);
   border: none;
@@ -148,6 +145,7 @@ main {
 .accordion-category {
   background: var(--contentBodyBackgroundColor);
   border-radius: 5px;
+  box-shadow: 1.5px 3px 5px 3px rgba(0, 0, 0, 0.7);
 }
 .accordion-collapse {
   margin-bottom: 10px;
@@ -162,8 +160,8 @@ main {
   background: var(--contentItemBackgroundolor);
   border-radius: 10px;
   padding: 5px;
-  border: none;
-  box-shadow: 2px 4px 5px 0px rgba(0, 0, 0, 0.5);
+  border: 1px solid;
+  /* box-shadow: 1.5px 3px 5px 3px rgba(0, 0, 0, 0.7); */
   margin-bottom: 10px;
   min-height: 33px;
 }
@@ -183,13 +181,14 @@ main {
   padding: 0 15px;
   text-align: right;
   color: var(--priceColor);
+  font-weight: bold;
 }
 
 /* ============= reference links ============= */
 .whatsapp {
   position: fixed;
   bottom: 30px;
-  left: 30px;
+  left: 6vw;
   width: 30px;
   height: 30px;
   display: flex;
@@ -203,7 +202,7 @@ main {
 #upbtn {
   position: fixed;
   bottom: 30px;
-  right: 30px;
+  right: 6vw;
   background-color: rgb(65, 65, 245);
   width: 30px;
   height: 30px;
@@ -230,6 +229,7 @@ footer {
   color: var(--footerFontColor);
   text-align: center;
   background: var(--footerBackground);
+  font-weight: bold;
 }
 footer label {
   margin-right: 5px;
@@ -241,7 +241,8 @@ footer label {
   padding: 10px 0 5px 0;
 }
 footer a {
-  color: white !important;
+  color: darkblue !important;
+  font-weight: bold;
 }
 #copy {
   font-size: 11px;
@@ -249,145 +250,20 @@ footer a {
   padding: 10px 0 5px 0;
 }
 
-/* dark theme */
-@media (prefers-color-scheme: light) {
-  body {
-    background: var(--bodyColor);
-  }
+@media (orientation: landscape) {
   header {
-    color: var(--headerFontcolor);
-    background: var(--headerBackground);
+    height: calc(80vh);
   }
-  header a {
-    color: var(--headerFontColor) !important;
-  }
-  header i {
-    color: var(--headerFontColor) !important;
-  }
-  #btn-group {
-    background-color: var(--btnDivBackgroundColor);
-  }
-  .btn {
-    background: var(--btnDivIndividualBackgroundColor);
-    color: var(--btnDivFontColor);
-  }
-  #btn-group {
-    background-color: var(--btnDivBackgroundColor);
-  }
-  .btn {
-    background: var(--btnDivIndividualBackgroundColor);
-    color: var(--btnDivFontColor);
-    border: 1px solid rgb(0, 0, 0);
-  }
-  .category-button {
-    color: var(--contentHeaderFontcolor);
-    background: var(--contentHeaderBackgroundColor);
-  }
-  .accordion-category {
-    background: var(--contentBodyBackgroundColor);
-  }
-  .accordion-body {
-    background: var(--contentBodyBackgroundColor);
-  }
-  .accordion-body fieldset {
-    background: var(--contentItemBackgroundolor);
-    box-shadow: 2px 4px 5px 0px rgba(0, 0, 0, 0.5);
-  }
-  .title {
-    color: var(--itemNameColor);
-  }
-  .description {
-    color: var(--descriptionColor);
-  }
-  .price {
-    color: var(--priceColor);
-  }
-  .whatsapp {
-    background-color: rgb(54, 147, 54);
-    color: white !important;
-  }
-  #upbtn {
-    background-color: rgb(65, 65, 245);
-  }
-  #upbtn i {
-    color: white;
-  }
-  footer {
-    color: var(--footerFontColor);
-    background: var(--footerBackground);
-  }
-  footer a {
-    color: white !important;
+  header img {
+    width: 73vh;
+    margin-top: 4vh;
   }
 }
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background: var(--bodyColor);
-  }
-  header {
-    color: var(--headerFontcolor);
-    background: var(--headerBackground);
-  }
-  header a {
-    color: var(--headerFontColor) !important;
-  }
-  header i {
-    color: var(--headerFontColor) !important;
-  }
-  #btn-group {
-    background-color: var(--btnDivBackgroundColor);
-  }
-  .btn {
-    background: var(--btnDivIndividualBackgroundColor);
-    color: var(--btnDivFontColor);
-  }
-  #btn-group {
-    background-color: var(--btnDivBackgroundColor);
-  }
-  .btn {
-    background: var(--btnDivIndividualBackgroundColor);
-    color: var(--btnDivFontColor);
-    border: 1px solid rgb(0, 0, 0);
-  }
-  .category-button {
-    color: var(--contentHeaderFontcolor);
-    background: var(--contentHeaderBackgroundColor);
-  }
-  .accordion-category {
-    background: var(--contentBodyBackgroundColor);
-  }
-  .accordion-body {
-    background: var(--contentBodyBackgroundColor);
-  }
-  .accordion-body fieldset {
-    background: var(--contentItemBackgroundolor);
-    box-shadow: 2px 4px 5px 0px rgba(0, 0, 0, 0.5);
-  }
-  .title {
-    color: var(--itemNameColor);
-  }
-  .description {
-    color: var(--descriptionColor);
-  }
-  .price {
-    color: var(--priceColor);
-  }
+@media screen and (min-width: 670px) {
   .whatsapp {
-    background-color: rgb(54, 147, 54);
-    color: white !important;
+    left: calc(50vw - 300px);
   }
   #upbtn {
-    background-color: rgb(65, 65, 245);
-  }
-  #upbtn i {
-    color: white;
-  }
-  footer {
-    color: var(--footerFontColor);
-    background: var(--footerBackground);
-  }
-  footer a {
-    color: white !important;
+    right: calc(50vw - 300px);
   }
 }

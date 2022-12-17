@@ -327,8 +327,6 @@ const body = document.querySelector("#body");
 window.onload = function () {
   body.style.display = "block";
   document.getElementById("loading-screen").style.display = "none";
-  menuTypes();
-  displayMenu();
 };
 
 const menuBody = document.getElementById("menu-body");
@@ -336,6 +334,8 @@ const menuBtn = document.getElementById("btn-group");
 var DATA = [];
 var menutype = [];
 
+menuTypes();
+displayMenu();
 function menuTypes() {
   const menutypes = [];
   data.forEach((element) => {
@@ -431,7 +431,7 @@ scrollLinks.forEach((link) => {
     const element = document.getElementById(id);
 
     const navHeight = menuBtn.getBoundingClientRect().height;
-    let position = element.offsetTop - navHeight - 10;
+    let position = element.offsetTop - navHeight - 7;
 
     window.scrollTo({
       left: 0,

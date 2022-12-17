@@ -17,26 +17,31 @@
     </div>
     <div id="body" style="display: none">
       <header id="header">
-        <img src="logos/main-logo.png" alt="Moonlight-logo" />
-        <p>
-          <i>&#x26B2;</i>
-          <a target="_blank" href="https://goo.gl/maps/KHyCns9iBLu6aGkE8"
-            >Ehden , Near Saydet Al Hosn</a
-          >
-        </p>
-        <!-- <p>
+        <div id="headerimgcontainer">
+          <img src="logos/main-logo.png" alt="Moonlight-logo" />
+          <p>
+            <i><span class="location-pin"></span></i>
+            <a target="_blank" href="https://goo.gl/maps/KHyCns9iBLu6aGkE8"
+              >Ehden , Near Saydet Al Hosn</a
+            >
+          </p>
+          <!-- <p>
         <i class="fa">&#xf095;</i>
         <a href="tel:+9613574745"> 03 574 745 </a>
       </p> -->
+        </div>
       </header>
 
+      <div id="btn-group"></div>
       <main>
-        <div id="btn-group"></div>
         <div id="menu-body"></div>
       </main>
 
       <div id="wpbtn">
-        <a class="whatsapp" href="https://wa.me/+9613574745" target="_blank"
+        <a
+          class="whatsapp"
+          href="https://api.whatsapp.com/send/?phone=%2B9613574745&text&type=phone_number&app_absent=0"
+          target="_blank"
           ><i class="fa fa-whatsapp"></i
         ></a>
       </div>
@@ -46,13 +51,9 @@
       </div>
 
       <footer>
-        <a
-          ><label
-            ><i style="font-size: 25px; color: darkblue" class="fa"
-              >&#xf095;</i
-            ></label
-          >03 574 745</a
-        >
+        <label>
+          <a href="tel:+9613574745"><i class="fa">&#xf095;</i>03 574 745</a>
+        </label>
         <div style="display: grid; grid-template-columns: 1fr 1fr">
           <div id="copy"></div>
           <div id="credit">

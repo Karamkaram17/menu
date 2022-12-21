@@ -441,3 +441,19 @@ scrollLinks.forEach((link) => {
     });
   });
 });
+
+//show and remove whatsapp and back to top links
+const wpbtn = document.getElementById("wpbtn");
+const upbtn = document.getElementById("upbtn");
+const appearPoint = window.innerHeight * 0.2;
+
+window.addEventListener("scroll", () => {
+  const scrollPosition = window.pageYOffset;
+  if (scrollPosition >= appearPoint) {
+    wpbtn.style.display = "flex";
+    upbtn.style.display = "flex";
+  } else {
+    wpbtn.style.display = "none";
+    upbtn.style.display = "none";
+  }
+});

@@ -6,7 +6,7 @@
   --headerFontColor: white;
   --headerFontSize: 30px;
   /* btn div */
-  --btnDivBackgroundColor: inherit;
+  --btnDivBackgroundColor: url("./backgrounds/background.jpg");
   --btnDivIndividualBackgroundColor: rgb(222, 189, 146);
   --btnDivFontColor: darkblue;
   --btnDivFontSize: 10px;
@@ -46,7 +46,8 @@ a:active {
   text-decoration: none;
 }
 body {
-  background: var(--bodyColor);
+  background: var(--bodyColor) no-repeat center center fixed;
+  background-size: cover;
   margin: 0;
 }
 
@@ -55,14 +56,15 @@ header {
   text-align: center;
   color: var(--headerFontcolor);
   background: var(--headerBackground);
-  height: calc(103vw);
+  height: calc(100vw);
   position: relative;
+  margin-bottom: 15px;
 }
 #headerimgcontainer {
   position: relative;
 }
 header img {
-  width: 100.5vw;
+  width: 100vw;
   max-width: 600px;
   margin: auto;
   box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.5);
@@ -70,9 +72,10 @@ header img {
 header p:last-of-type {
   position: absolute;
   z-index: 600;
-  bottom: -5px;
+  bottom: 7px;
   width: 100vw;
   font-size: 0.9rem;
+  margin: 0;
 }
 header a {
   color: var(--headerFontColor) !important;
@@ -85,16 +88,17 @@ header i {
 /* ============= btn div ============= */
 #btn-group {
   margin: 5px auto 15px auto;
-  max-width: 610px;
+  max-width: calc(8 * 80px);
   display: flex;
   overflow-x: auto;
   position: sticky;
   top: 0px;
   z-index: 1000;
   width: 91vw;
-  background-color: var(--btnDivBackgroundColor);
+  background: var(--btnDivBackgroundColor);
   border-radius: 5px;
-  border: 1px solid;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
 }
 .btn {
   width: 80px;
@@ -107,8 +111,7 @@ header i {
   text-align: center;
   border-radius: 5px;
   border: none;
-  border-left: 1px solid black;
-  border-right: 1px solid black;
+  border: 1px solid black;
 }
 .icons-b {
   width: 30px;
@@ -118,7 +121,7 @@ header i {
 /* ============= menu div ============= */
 main {
   width: 90vw;
-  max-width: 600px;
+  max-width: calc(8 * 80px - 10px);
   margin: auto;
 }
 /* category header */
@@ -151,6 +154,7 @@ main {
 /* category content */
 .accordion-category {
   background: var(--contentBodyBackgroundColor);
+  filter: brightness(90%) saturate(120%);
   border-radius: 5px;
   box-shadow: 1.5px 3px 5px 3px rgba(0, 0, 0, 0.7);
 }
@@ -178,7 +182,8 @@ main {
   font-style: italic;
   font-weight: bold;
   color: var(--itemNameColor);
-  padding-left: 10px;
+  margin-left: 10px;
+  padding: 0 5px;
 }
 .description {
   font-size: var(--descriptionFontSize);
@@ -193,7 +198,7 @@ main {
 }
 
 /* ============= reference links ============= */
-.whatsapp {
+#wpbtn {
   position: fixed;
   bottom: 30px;
   left: 6vw;
@@ -203,9 +208,12 @@ main {
   align-items: center;
   justify-content: center;
   background-color: rgb(54, 147, 54);
-  font-size: 1.4em;
-  color: white !important;
   z-index: 5;
+  display: none;
+}
+#wpbtn i {
+  font-size: 1.4em;
+  color: white;
 }
 #upbtn {
   position: fixed;
@@ -218,6 +226,7 @@ main {
   align-items: center;
   justify-content: center;
   z-index: 5;
+  display: none;
 }
 #upbtn i {
   font-size: 1.4em;
@@ -269,7 +278,7 @@ footer a {
   }
 }
 @media screen and (min-width: 670px) {
-  .whatsapp {
+  #wpbtn {
     left: calc(50vw - 300px);
   }
   #upbtn {

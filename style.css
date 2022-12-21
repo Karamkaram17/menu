@@ -47,7 +47,6 @@ a:active {
 }
 body {
   background: var(--bodyColor) no-repeat center center fixed;
-  background-size: cover;
   margin: 0;
 }
 
@@ -317,5 +316,78 @@ footer a {
   100% {
     transform: scale(1); /* back to the normal scale */
     color: rgb(89, 89, 211);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: var(--bodyColor);
+  }
+  header {
+    color: var(--headerFontcolor);
+    background: var(--headerBackground);
+  }
+  header a {
+    color: var(--headerFontColor) !important;
+  }
+  header i {
+    color: var(--headerFontColor) !important;
+  }
+
+  /* ============= btn div ============= */
+  #btn-group {
+    background-color: var(--btnDivBackgroundColor);
+  }
+  .btn {
+    background: var(--btnDivIndividualBackgroundColor);
+    color: var(--btnDivFontColor);
+  }
+  #btn-group {
+    background-color: var(--btnDivBackgroundColor);
+  }
+  .btn {
+    background: var(--btnDivIndividualBackgroundColor);
+    color: var(--btnDivFontColor);
+    border: 1px solid rgb(0, 0, 0);
+  }
+  .category-button {
+    color: var(--contentHeaderFontcolor);
+    background: var(--contentHeaderBackgroundColor);
+  }
+  .accordion-category {
+    background: var(--contentBodyBackgroundColor);
+  }
+  .accordion-body {
+    background: var(--contentBodyBackgroundColor);
+  }
+  .accordion-body fieldset {
+    background: var(--contentItemBackgroundolor);
+    box-shadow: 2px 4px 5px 0px rgba(0, 0, 0, 0.5);
+  }
+  .title {
+    color: var(--itemNameColor);
+  }
+  .description {
+    color: var(--descriptionColor);
+  }
+  .price {
+    color: var(--priceColor);
+  }
+  .whatsapp {
+    background-color: rgb(54, 147, 54);
+    color: white !important;
+  }
+  #upbtn {
+    background-color: rgb(255, 255, 255);
+  }
+  #upbtn i {
+    color: white;
+  }
+  footer {
+    color: var(--footerFontColor);
+    background: var(--footerBackground);
+  }
+  footer a {
+    color: white !important;
   }
 }

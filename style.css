@@ -10,6 +10,7 @@
   --btnDivIndividualBackgroundColor: rgb(222, 189, 146);
   --btnDivFontColor: darkblue;
   --btnDivFontSize: 10px;
+  --btnsHeight: 60px;
   /* menu */
   --contentHeaderFontSize: 1.1rem;
   --contentHeaderFontcolor: rgb(8, 8, 97);
@@ -46,8 +47,13 @@ a:active {
   text-decoration: none;
 }
 body {
-  background: var(--bodyColor);
   margin: 0;
+}
+#body {
+  background-image: var(--bodyColor);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 /* ============= header div ============= */
@@ -56,25 +62,30 @@ header {
   color: var(--headerFontcolor);
   background: var(--headerBackground);
   height: calc(100vw);
+  max-height: calc(8 * 80px);
   position: relative;
   margin-bottom: 15px;
 }
 #headerimgcontainer {
+  margin: auto;
   position: relative;
+  width: 100vw;
+  max-width: calc(8 * 80px);
 }
 header img {
   width: 100vw;
-  max-width: 600px;
+  max-width: calc(8 * 80px);
   margin: auto;
   box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
-header p:last-of-type {
+#headerimgcontainer p:last-of-type {
   position: absolute;
   z-index: 600;
   bottom: 7px;
-  width: 100vw;
+  width: 100%;
   font-size: 0.9rem;
   margin: 0;
+  padding: 0;
 }
 header a {
   color: var(--headerFontColor) !important;
@@ -105,7 +116,7 @@ header i {
   font-size: var(--btnDivFontSize);
   background: var(--btnDivIndividualBackgroundColor);
   color: var(--btnDivFontColor);
-  height: 60px;
+  height: var(--btnsHeight);
   display: grid;
   text-align: center;
   border-radius: 5px;
@@ -270,10 +281,13 @@ footer a {
 
 @media (orientation: landscape) {
   header {
-    height: calc(80vh);
+    height: calc(100vh - var(--btnsHeight) - 21px);
   }
   header img {
-    width: 73vh;
+    width: calc(100vh - var(--btnsHeight) - 28px);
+  }
+  #headerimgcontainer {
+    width: calc(100vh - var(--btnsHeight) - 28px);
   }
 }
 @media screen and (min-width: 670px) {
@@ -361,6 +375,7 @@ footer a {
   .accordion-body fieldset {
     background: var(--contentItemBackgroundolor);
     box-shadow: 2px 4px 5px 0px rgba(0, 0, 0, 0.5);
+    border: black;
   }
   .title {
     color: var(--itemNameColor);
@@ -387,7 +402,10 @@ footer a {
     color: var(--footerFontColor);
     background: var(--footerBackground);
   }
+  footer i {
+    color: darkblue;
+  }
   footer a {
-    color: white !important;
+    color: darkblue !important;
   }
 }

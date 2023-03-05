@@ -10,14 +10,14 @@
   --btnDivIndividualBackgroundColor: rgb(222, 189, 146);
   --btnDivFontColor: darkblue;
   --btnDivFontSize: 10px;
-  --btnsHeight: 60px;
+  --btnHeight: 60px;
   /* menu */
   --contentHeaderFontSize: 1.1rem;
-  --contentHeaderFontcolor: rgb(8, 8, 97);
+  --contentHeaderFontColor: rgb(8, 8, 97);
   --contentHeaderBackgroundColor: inherit;
 
   --contentBodyBackgroundColor: url("./backgrounds/background.jpg");
-  --contentItemBackgroundolor: inherit;
+  --contentItemBackgroundColor: inherit;
 
   --itemNameColor: darkblue;
   --itemNameFontSize: 1rem;
@@ -59,14 +59,14 @@ body {
 /* ============= header div ============= */
 header {
   text-align: center;
-  color: var(--headerFontcolor);
+  color: var(--headerFontColor);
   background: var(--headerBackground);
   height: calc(100vw);
   max-height: calc(8 * 80px);
   position: relative;
   margin-bottom: 15px;
 }
-#headerimgcontainer {
+#header-img-container {
   margin: auto;
   position: relative;
   width: 100vw;
@@ -78,7 +78,7 @@ header img {
   margin: auto;
   box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
-#headerimgcontainer p:last-of-type {
+#header-img-container p:last-of-type {
   position: absolute;
   z-index: 600;
   bottom: 7px;
@@ -116,7 +116,7 @@ header i {
   font-size: var(--btnDivFontSize);
   background: var(--btnDivIndividualBackgroundColor);
   color: var(--btnDivFontColor);
-  height: var(--btnsHeight);
+  height: var(--btnHeight);
   display: grid;
   text-align: center;
   border-radius: 5px;
@@ -141,7 +141,7 @@ main {
   align-items: center;
   font-size: var(--contentHeaderFontSize);
   font-weight: bold;
-  color: var(--contentHeaderFontcolor);
+  color: var(--contentHeaderFontColor);
   background: var(--contentHeaderBackgroundColor);
   border: none;
   margin: 0;
@@ -179,7 +179,7 @@ main {
   border-top: 1px solid black;
 }
 .accordion-body fieldset {
-  background: var(--contentItemBackgroundolor);
+  background: var(--contentItemBackgroundColor);
   border-radius: 10px;
   padding: 5px;
   border: 1px solid;
@@ -208,7 +208,7 @@ main {
 }
 
 /* ============= reference links ============= */
-#wpbtn {
+#wp-btn {
   position: fixed;
   bottom: 30px;
   left: 6vw;
@@ -221,11 +221,11 @@ main {
   z-index: 5;
   display: none;
 }
-#wpbtn i {
+#wp-btn i {
   font-size: 1.4em;
   color: white;
 }
-#upbtn {
+#up-btn {
   position: fixed;
   bottom: 30px;
   right: 6vw;
@@ -238,7 +238,7 @@ main {
   z-index: 5;
   display: none;
 }
-#upbtn i {
+#up-btn i {
   font-size: 1.4em;
   font-weight: bold;
   color: white;
@@ -281,20 +281,20 @@ footer a {
 
 @media (orientation: landscape) {
   header {
-    height: calc(100vh - var(--btnsHeight) - 21px);
+    height: calc(100vh - var(--btnHeight) - 21px);
   }
   header img {
-    width: calc(100vh - var(--btnsHeight) - 28px);
+    width: calc(100vh - var(--btnHeight) - 28px);
   }
-  #headerimgcontainer {
-    width: calc(100vh - var(--btnsHeight) - 28px);
+  #header-img-container {
+    width: calc(100vh - var(--btnHeight) - 28px);
   }
 }
 @media screen and (min-width: 670px) {
-  #wpbtn {
+  #wp-btn {
     left: calc(50vw - 300px);
   }
-  #upbtn {
+  #up-btn {
     right: calc(50vw - 300px);
   }
 }
@@ -338,7 +338,7 @@ footer a {
     background: var(--bodyColor);
   }
   header {
-    color: var(--headerFontcolor);
+    color: var(--headerFontColor);
     background: var(--headerBackground);
   }
   header a {
@@ -363,7 +363,7 @@ footer a {
     border: 1px solid rgb(0, 0, 0);
   }
   .category-button {
-    color: var(--contentHeaderFontcolor);
+    color: var(--contentHeaderFontColor);
     background: var(--contentHeaderBackgroundColor);
   }
   .accordion-category {
@@ -373,7 +373,7 @@ footer a {
     background: var(--contentBodyBackgroundColor);
   }
   .accordion-body fieldset {
-    background: var(--contentItemBackgroundolor);
+    background: var(--contentItemBackgroundColor);
     box-shadow: 2px 4px 5px 0px rgba(0, 0, 0, 0.5);
     border: black;
   }
@@ -386,16 +386,16 @@ footer a {
   .price {
     color: var(--priceColor);
   }
-  .wpbtn {
+  .wp-btn {
     background-color: rgb(54, 147, 54);
   }
-  #wpbtn i {
+  #wp-btn i {
     color: white;
   }
-  #upbtn {
+  #up-btn {
     background-color: rgb(65, 65, 245);
   }
-  #upbtn i {
+  #up-btn i {
     color: white;
   }
   footer {

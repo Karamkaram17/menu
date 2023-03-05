@@ -443,8 +443,8 @@ scrollLinks.forEach((link) => {
 });
 
 //show and remove whatsapp and back to top links
-const wpbtn = document.getElementById("wpbtn");
-const upbtn = document.getElementById("upbtn");
+const wpbtn = document.getElementById("wp-btn");
+const upbtn = document.getElementById("up-btn");
 const appearPoint = window.innerHeight * 0.1;
 
 window.addEventListener("scroll", () => {

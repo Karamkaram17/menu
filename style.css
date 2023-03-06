@@ -1,35 +1,43 @@
 :root {
   /* body */
-  --bodyColor: url("./backgrounds/background.jpg");
+  --body-bg: url("./backgrounds/background.jpg");
   /* header */
-  --headerBackground: inherit;
-  --headerFontColor: white;
-  --headerFontSize: 30px;
+  --header-bg: inherit;
+  --header-color: white;
+  --header-box-shadow: 0 0 20px rgb(0, 0, 0);
   /* btn div */
-  --btnDivBackgroundColor: url("./backgrounds/background.jpg");
-  --btnDivIndividualBackgroundColor: rgb(222, 189, 146);
-  --btnDivFontColor: darkblue;
-  --btnDivFontSize: 10px;
-  --btnHeight: 60px;
+  --btn-div-bg: url("./backgrounds/background.jpg");
+  --btn-bg: rgb(222, 189, 146);
+  --btn-border: 1px solid black;
+  --btn-color: darkblue;
+  --btn-font-size: 10px;
+  --btn-height: 60px;
+  --btn-width: 80px;
   /* menu */
-  --contentHeaderFontSize: 1.1rem;
-  --contentHeaderFontColor: rgb(8, 8, 97);
-  --contentHeaderBackgroundColor: inherit;
-
-  --contentBodyBackgroundColor: url("./backgrounds/background.jpg");
-  --contentItemBackgroundColor: inherit;
-
-  --itemNameColor: darkblue;
-  --itemNameFontSize: 1rem;
-
-  --descriptionColor: rgb(9, 9, 77);
-  --descriptionFontSize: 0.8rem;
-
-  --priceColor: darkblue;
-  --priceFontSize: 0.9rem;
+  --section-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.737);
+  --section-border: 1px solid darkblue;
+  --section-btn-font-size: 1.1rem;
+  --section-btn-color: darkblue;
+  --section-btn-bg: inherit;
+  --article-bg: url("./backgrounds/background.jpg");
+  --article-border: 1px solid black;
+  --fieldset-bg: inherit;
+  --fieldset-box-shadow: 0 2px 10px 1px rgba(0, 0, 0, 0.56);
+  --fieldset-border: 1px solid darkblue;
+  --item-color: darkblue;
+  --item-font-size: 1.1rem;
+  --description-color: rgb(19, 19, 86);
+  --description-font-size: 0.9rem;
+  --price-color: darkblue;
+  --price-font-size: 0.9rem;
   /* footer */
-  --footerBackground: inherit;
-  --footerFontColor: black;
+  --footer-bg: inherit;
+  --footer-color: black;
+  --footer-a-i-color: darkblue;
+  /* ref btn */
+  --wp-btn-bg: rgb(54, 147, 54);
+  --up-btn-bg: rgb(65, 65, 245);
+  --ref-btn-color: white;
 }
 
 .location-pin::before {
@@ -43,14 +51,13 @@ a:link,
 a:visited,
 a:hover,
 a:active {
-  color: black;
   text-decoration: none;
 }
 body {
   margin: 0;
 }
 #body {
-  background-image: var(--bodyColor);
+  background: var(--body-bg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -59,237 +66,233 @@ body {
 /* ============= header div ============= */
 header {
   text-align: center;
-  color: var(--headerFontColor);
-  background: var(--headerBackground);
+  color: var(--header-color);
+  background: var(--header-bg);
   height: calc(100vw);
-  max-height: calc(8 * 80px);
-  position: relative;
-  margin-bottom: 15px;
+  max-height: calc(8 * var(--btn-width));
+  margin-bottom: 1rem;
 }
 #header-img-container {
   margin: auto;
   position: relative;
-  width: 100vw;
-  max-width: calc(8 * 80px);
+  width: 100%;
+  max-width: calc(8 * var(--btn-width));
 }
 header img {
-  width: 100vw;
-  max-width: calc(8 * 80px);
+  width: 100%;
+  max-width: calc(8 * var(--btn-width));
   margin: auto;
-  box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: var(--header-box-shadow);
 }
-#header-img-container p:last-of-type {
+header p {
   position: absolute;
   z-index: 600;
-  bottom: 7px;
+  bottom: 0.5rem;
   width: 100%;
   font-size: 0.9rem;
   margin: 0;
   padding: 0;
 }
 header a {
-  color: var(--headerFontColor) !important;
+  color: var(--header-color);
 }
 header i {
-  color: var(--headerFontColor) !important;
-  margin-right: 5px;
-}
-
-/* ============= btn div ============= */
-#btn-group {
-  margin: 5px auto 15px auto;
-  max-width: calc(8 * 80px);
-  display: flex;
-  overflow-x: auto;
-  position: sticky;
-  top: 0px;
-  z-index: 1000;
-  width: 91vw;
-  background: var(--btnDivBackgroundColor);
-  border-radius: 5px;
-  border-left: 1px solid black;
-  border-right: 1px solid black;
-}
-.btn {
-  width: 80px;
-  padding: 0;
-  font-size: var(--btnDivFontSize);
-  background: var(--btnDivIndividualBackgroundColor);
-  color: var(--btnDivFontColor);
-  height: var(--btnHeight);
-  display: grid;
-  text-align: center;
-  border-radius: 5px;
-  border: none;
-  border: 1px solid black;
-}
-.icons-b {
-  width: 30px;
-  margin: auto;
+  color: var(--header-color);
+  margin-right: 0.35rem;
 }
 
 /* ============= menu div ============= */
 main {
   width: 90vw;
-  max-width: calc(8 * 80px - 10px);
+  max-width: calc(8 * var(--btn-width));
   margin: auto;
 }
-/* category header */
-.category-button {
+
+/* ============= sticky buttons div ============= */
+#btn-group {
+  margin: 0.5rem auto 1rem auto;
+  width: 91vw;
+  max-width: calc(8 * var(--btn-width));
+  display: grid;
+  grid-template-columns: repeat(8, var(--btn-width));
+  overflow-x: auto;
+  position: sticky;
+  top: 0px;
+  z-index: 1000;
+  background: var(--btn-div-bg);
+  border-radius: 0.35rem;
+}
+#btn-group button {
+  height: var(--btn-height);
+  padding: 0;
+  font-size: var(--btn-font-size);
+  background: var(--btn-bg);
+  color: var(--btn-color);
+  text-align: center;
+  border-radius: 0.35rem;
+  border: var(--btn-border);
+}
+#btn-group img {
+  width: 2rem;
+  margin: auto;
+}
+#btn-group a {
+  color: var(--btn-color);
+  font-weight: bold;
+}
+
+/* =============== section ================ */
+section {
+  background: var(--article-bg);
+  border-radius: 0.35rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--section-box-shadow);
+  border: var(--section-border);
+}
+
+/* ============= section button ============= */
+.section-btn {
   width: 100%;
   display: flex;
   align-items: center;
-  font-size: var(--contentHeaderFontSize);
+  font-size: var(--section-btn-font-size);
   font-weight: bold;
-  color: var(--contentHeaderFontColor);
-  background: var(--contentHeaderBackgroundColor);
+  color: var(--section-btn-color);
+  background: var(--section-btn-bg);
   border: none;
   margin: 0;
-  border-radius: 5px;
-  height: 45px;
+  border-radius: 0.35rem;
+  height: 3rem;
   position: relative;
 }
-.icons-m {
+.section-btn img {
   width: 1.7em;
-  margin: 0 10px 0 0;
+  margin: 0 0.65rem 0 0;
 }
-.accordion-functionality {
+.section-btn div {
   position: absolute;
-  right: 20px;
-  font-size: 1.5rem;
+  right: 1.25rem;
 }
-.accordion-functionality i {
+.section-btn i {
+  font-size: 1.5rem;
   font-weight: bold;
 }
-/* category content */
-.accordion-category {
-  background: var(--contentBodyBackgroundColor);
-  filter: brightness(90%) saturate(120%);
-  border-radius: 5px;
-  box-shadow: 1.5px 3px 5px 3px rgba(0, 0, 0, 0.7);
+
+/* ============= article ==============  */
+article {
+  background: var(--article-bg);
+  border-bottom-right-radius: 0.35rem;
+  border-bottom-left-radius: 0.35rem;
+  padding: 0.35rem;
+  border-top: var(--article-border);
 }
-.accordion-collapse {
-  margin-bottom: 10px;
-}
-.accordion-body {
-  background: var(--contentBodyBackgroundColor);
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
-  padding: 5px;
-  border-top: 1px solid black;
-}
-.accordion-body fieldset {
-  background: var(--contentItemBackgroundColor);
-  border-radius: 10px;
-  padding: 5px;
-  border: 1px solid;
-  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.5);
-  margin-bottom: 10px;
-  min-height: 33px;
+article fieldset {
+  background: var(--fieldset-bg);
+  border-radius: 0.65rem;
+  padding: 0.35rem;
+  border: var(--fieldset-border);
+  box-shadow: var(--fieldset-box-shadow);
+  margin-bottom: 0.65rem;
+  min-height: 2rem;
 }
 .title {
-  font-size: var(--itemNameFontSize);
+  font-size: var(--item-font-size);
   font-style: italic;
   font-weight: bold;
-  color: var(--itemNameColor);
-  margin-left: 10px;
-  padding: 0 5px;
+  color: var(--item-color);
+  margin-left: 0.65rem;
+  padding: 0 0.35rem;
 }
 .description {
-  font-size: var(--descriptionFontSize);
-  color: var(--descriptionColor);
+  font-size: var(--description-font-size);
+  color: var(--description-color);
 }
 .price {
-  font-size: var(--priceFontSize);
-  padding: 0 15px;
+  font-size: var(--price-font-size);
+  padding: 0 1rem;
   text-align: right;
-  color: var(--priceColor);
+  color: var(--price-color);
   font-weight: bold;
 }
 
 /* ============= reference links ============= */
-#wp-btn {
-  position: fixed;
-  bottom: 30px;
-  left: 6vw;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(54, 147, 54);
-  z-index: 5;
-  display: none;
-}
-#wp-btn i {
-  font-size: 1.4em;
-  color: white;
-}
+#wp-btn,
 #up-btn {
   position: fixed;
-  bottom: 30px;
-  right: 6vw;
-  background-color: rgb(65, 65, 245);
-  width: 30px;
-  height: 30px;
+  bottom: 2rem;
+  width: 2rem;
+  height: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 5;
   display: none;
+  border-radius: 50%;
+}
+#wp-btn {
+  left: 6vw;
+  background-color: var(--wp-btn-bg);
+}
+#up-btn {
+  right: 6vw;
+  background-color: var(--up-btn-bg);
+}
+#wp-btn i,
+#up-btn i {
+  font-size: 1.6em;
+  color: var(--ref-btn-color);
 }
 #up-btn i {
-  font-size: 1.4em;
   font-weight: bold;
-  color: white;
+  padding-bottom: 3px;
 }
 
 /* ============= footer ============= */
 footer {
   position: relative;
-  margin: 20px auto 0 auto;
+  margin: 1.2rem auto 0 auto;
   max-width: 600px;
-  min-width: 180px;
   width: 85vw;
-  display: grid;
-  grid-template-rows: auto auto;
-  color: var(--footerFontColor);
+  color: var(--footer-color);
   text-align: center;
-  background: var(--footerBackground);
+  background: var(--footer-bg);
   font-weight: bold;
 }
 footer i {
-  margin-right: 5px;
+  margin-right: 0.35rem;
   vertical-align: middle;
-  color: darkblue;
-  font-size: 23px !important;
-}
-#credit {
-  font-size: 10px;
-  text-align: end;
-  padding: 10px 0 5px 0;
+  color: var(--footer-a-i-color);
+  font-size: 1.5rem;
 }
 footer a {
-  color: darkblue !important;
+  color: var(--footer-a-i-color);
   font-weight: bold;
 }
-#copy {
-  font-size: 11px;
-  text-align: left;
-  padding: 10px 0 5px 0;
+footer div:first-of-type {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  padding: 0px 0.65rem;
+  font-size: 0.8rem;
+  color: var(--footer-Color);
+  box-shadow: var(--box-Shadow);
+  font-size: 0.7rem;
+}
+footer div div:last-child {
+  text-align: end;
 }
 
 @media (orientation: landscape) {
   header {
-    height: calc(100vh - var(--btnHeight) - 21px);
+    height: calc(100vh - var(--btn-height) - 21px);
   }
   header img {
-    width: calc(100vh - var(--btnHeight) - 28px);
+    width: calc(100vh - var(--btn-height) - 28px);
   }
   #header-img-container {
-    width: calc(100vh - var(--btnHeight) - 28px);
+    width: calc(100vh - var(--btn-height) - 28px);
   }
 }
+
 @media screen and (min-width: 670px) {
   #wp-btn {
     left: calc(50vw - 300px);
@@ -309,9 +312,9 @@ footer a {
   align-items: center;
 }
 #loading-screen p {
-  font-size: 30px;
+  font-size: 2rem;
   font-weight: bold;
-  color: blue;
+  color: rgb(255, 255, 255);
   font-family: monospace;
 }
 .zoom {
@@ -321,91 +324,14 @@ footer a {
 @keyframes zoom {
   0% {
     transform: scale(1); /* start at the normal scale */
-    color: rgb(89, 89, 211);
+    color: rgb(255, 255, 255);
   }
   50% {
     transform: scale(1.3); /* zoom in to 150% */
-    color: rgb(130, 38, 244);
+    color: rgb(161, 161, 161);
   }
   100% {
     transform: scale(1); /* back to the normal scale */
-    color: rgb(89, 89, 211);
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background: var(--bodyColor);
-  }
-  header {
-    color: var(--headerFontColor);
-    background: var(--headerBackground);
-  }
-  header a {
-    color: var(--headerFontColor) !important;
-  }
-  header i {
-    color: var(--headerFontColor) !important;
-  }
-  #btn-group {
-    background-color: var(--btnDivBackgroundColor);
-  }
-  .btn {
-    background: var(--btnDivIndividualBackgroundColor);
-    color: var(--btnDivFontColor);
-  }
-  #btn-group {
-    background-color: var(--btnDivBackgroundColor);
-  }
-  .btn {
-    background: var(--btnDivIndividualBackgroundColor);
-    color: var(--btnDivFontColor);
-    border: 1px solid rgb(0, 0, 0);
-  }
-  .category-button {
-    color: var(--contentHeaderFontColor);
-    background: var(--contentHeaderBackgroundColor);
-  }
-  .accordion-category {
-    background: var(--contentBodyBackgroundColor);
-  }
-  .accordion-body {
-    background: var(--contentBodyBackgroundColor);
-  }
-  .accordion-body fieldset {
-    background: var(--contentItemBackgroundColor);
-    box-shadow: 2px 4px 5px 0px rgba(0, 0, 0, 0.5);
-    border: black;
-  }
-  .title {
-    color: var(--itemNameColor);
-  }
-  .description {
-    color: var(--descriptionColor);
-  }
-  .price {
-    color: var(--priceColor);
-  }
-  .wp-btn {
-    background-color: rgb(54, 147, 54);
-  }
-  #wp-btn i {
-    color: white;
-  }
-  #up-btn {
-    background-color: rgb(65, 65, 245);
-  }
-  #up-btn i {
-    color: white;
-  }
-  footer {
-    color: var(--footerFontColor);
-    background: var(--footerBackground);
-  }
-  footer i {
-    color: darkblue;
-  }
-  footer a {
-    color: darkblue !important;
+    color: rgb(255, 255, 255);
   }
 }

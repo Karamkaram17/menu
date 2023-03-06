@@ -329,84 +329,63 @@ window.onload = function () {
   document.getElementById("loading-screen").style.display = "none";
 };
 
-const menuBody = document.getElementById("menu-body");
-const menuBtn = document.getElementById("btn-group");
-var DATA = [];
-var menutype = [];
+const menuBtnDOM = document.getElementById("btn-group");
+const menuBodyDOM = document.getElementById("menu-body");
+let categories = [];
 
-menuTypes();
+data.forEach(
+  (item) =>
+    !categories.includes(item.category) && categories.push(item.category)
+);
+
 displayMenu();
-function menuTypes() {
-  const menutypes = [];
-  data.forEach((element) => {
-    if (element.category != undefined) {
-      menutypes.push(element.category);
-    }
-  });
-  menutype = menutypes.filter(
-    (item, index) => menutypes.indexOf(item) === index
-  );
-}
-
-//for creating and displaying each categorie in its own section
 function displayMenu() {
-  menutype.forEach((type) => {
-    menuBtn.innerHTML += `
-    <a class="customref" href="#${type}">
-      <button type="button" class="btn">
-        <img class="icons-b" src="./icons/${type}.png">
-        <div>${type}</div>
-      </button>
-    </a>`;
-    let item = document.createElement("div");
-    item.className = "accordion-category";
-    item.id = `${type}`;
-    item.innerHTML = `
-    <span class="category-header" 
-        id="heading${menutype.indexOf(type)}"
+  categories.forEach((type) => {
+    menuBtnDOM.innerHTML += `
+      <button>
+        <a class="reference" href="#${type}">
+          <img src="./icons/${type}.png">
+          <div>${type}</div>
+        </a>
+      </button>`;
+
+    const section = document.createElement("section");
+    section.id = type;
+    section.innerHTML = `
+      <button 
+        class="section-btn" 
+        onclick='toggleArticle("article${categories.indexOf(type)}")'
       >
-      <button onclick=closeOpen('${menutype.indexOf(
-        type
-      )}') class="category-button" type="button">
-        <img class="icons-m" src="./icons/${type}.png">
-        ${capitalizeFirstLetter(type)}
-        <span id ="closer${menutype.indexOf(
+        <img src="./icons/${type}.png" />
+        <p>${capitalizeFirstLetter(type)}</p>
+        <div id='closer${categories.indexOf(
           type
-        )}" class="accordion-functionality"><i class="fa fa-angle-up"></i></span>
-      </button>
-    </span>`;
-    let menubody = document.createElement("div");
-    menubody.className = `accordion-collapse`;
-    item.appendChild(menubody);
-    let accordeonBody = document.createElement("div");
-    accordeonBody.className = "accordion-body";
-    accordeonBody.id = `accordion-body${menutype.indexOf(type)}`;
-    menubody.appendChild(accordeonBody);
-    //diplaying each item in its own menu type
-    data.forEach((element) => {
-      if (element.category == type && element.category != undefined) {
-        if (element.name !== undefined) {
-          accordeonBody.innerHTML += `
-              <fieldset>
-                <legend class="title">${element.name}</legend>
-                <div class="description">${element.description}</div>
-                <div class="price">${element.price}</div>
-              </fieldset>
-          `;
-        }
-      }
+        )}'><i class="fa fa-angle-up"></i></div>
+      </button>`;
+
+    const article = document.createElement("article");
+    article.id = `article${categories.indexOf(type)}`;
+    section.appendChild(article);
+    const newItems = data.filter((i) => i.category === type);
+    newItems.forEach((item) => {
+      article.innerHTML += `
+        <fieldset>
+          <legend class="title">${item.name}</legend>
+          <div class="description">${item.description}</div>
+          <div class="price">${item.price}</div>
+        </fieldset>`;
     });
-    menuBody.appendChild(item);
+    menuBodyDOM.appendChild(section);
   });
 }
 
 function capitalizeFirstLetter(s) {
   return s[0].toUpperCase() + s.slice(1);
 }
-//inline for opening and closing categorys
-function closeOpen(elm) {
-  let target = document.getElementById(`accordion-body${elm}`);
-  let closer = document.getElementById(`closer${elm}`);
+
+function toggleArticle(id) {
+  const target = document.getElementById(id);
+  const closer = document.getElementById(`closer${id.slice(7)}`);
   if (target.style.display != "none") {
     target.style.display = "none";
     target.style.borderTop = "none";
@@ -424,7 +403,7 @@ let copy = document.getElementById("copy");
 copy.innerHTML = `copyright &copy; ${date}`;
 
 //links
-const scrollLinks = document.querySelectorAll(".customref");
+const scrollLinks = document.querySelectorAll(".reference");
 scrollLinks.forEach((link) => {
   link.addEventListener("click", (e) => {
     e.preventDefault();
@@ -432,7 +411,7 @@ scrollLinks.forEach((link) => {
     const id = e.currentTarget.getAttribute("href").slice(1);
     const element = document.getElementById(id);
 
-    const navHeight = menuBtn.getBoundingClientRect().height;
+    const navHeight = menuBtnDOM.getBoundingClientRect().height;
     let position = element.offsetTop - navHeight - 7;
 
     window.scrollTo({
@@ -443,17 +422,17 @@ scrollLinks.forEach((link) => {
 });
 
 //show and remove whatsapp and back to top links
-const wpbtn = document.getElementById("wp-btn");
-const upbtn = document.getElementById("up-btn");
+const wpBtn = document.getElementById("wp-btn");
+const upBtn = document.getElementById("up-btn");
 const appearPoint = window.innerHeight * 0.1;
 
 window.addEventListener("scroll", () => {
   const scrollPosition = window.pageYOffset;
   if (scrollPosition >= appearPoint) {
-    wpbtn.style.display = "flex";
-    upbtn.style.display = "flex";
+    wpBtn.style.display = "flex";
+    upBtn.style.display = "flex";
   } else {
-    wpbtn.style.display = "none";
-    upbtn.style.display = "none";
+    wpBtn.style.display = "none";
+    upBtn.style.display = "none";
   }
 });

@@ -351,20 +351,16 @@ function displayMenu() {
 
     const section = document.createElement("section");
     section.id = type;
-    section.innerHTML = `
-      <button 
-        class="section-btn" 
-        onclick='toggleArticle("article${categories.indexOf(type)}")'
-      >
-        <img src="./icons/${type}.png" />
-        <p>${capitalizeFirstLetter(type)}</p>
-        <div id='closer${categories.indexOf(
-          type
-        )}'><i class="fa fa-angle-up"></i></div>
-      </button>`;
+    section.innerHTML += `
+        <button class="section-btn"   onclick="toggleDropdown('${type}')">
+          <img src="./icons/${type}.png" />
+          <p>${capitalizeFirstLetter(type)}</p>
+          <div class='closer'><i class="fa fa-angle-up"></i></div>
+        </button>`;
 
     const article = document.createElement("article");
-    article.id = `article${categories.indexOf(type)}`;
+    article.id = `article-${type}`;
+    article.className = "dropdown-body show";
     section.appendChild(article);
     const newItems = data.filter((i) => i.category === type);
     newItems.forEach((item) => {
@@ -441,3 +437,42 @@ window.addEventListener("scroll", () => {
     upBtn.style.display = "none";
   }
 });
+
+function toggleDropdown(type) {
+  let newData = data.filter((i) => i.category === type);
+  let section = document.getElementById(`${type}`);
+  let closer = section.querySelector(".closer");
+  let btn = section.querySelector("button");
+  btn.classList.toggle("animate");
+  let article = document.getElementById(`article-${type}`);
+  article.classList.toggle("show");
+  article.classList.toggle("hide");
+
+  // If the dropdown body is opened, populate it with data from the array
+  if (article.classList.contains("show")) {
+    article.innerHTML = "";
+    closer.innerHTML = '<i class="fa fa-angle-up"></i>';
+    for (let i = 0; i < newData.length; i++) {
+      let fieldset = document.createElement("fieldset");
+      fieldset.innerHTML = `
+        <legend class="title">${newData[i].name}</legend>
+        <div class="description">${newData[i].description}</div>
+        <div class="price">${newData[i].price}</div>`;
+      article.appendChild(fieldset);
+
+      // Add a delay to each list item
+      let delay = i * 100 + 100;
+      fieldset.style.transitionDelay = delay + "ms";
+    }
+    // If the dropdown body is closed, remove the data and delay from each list item
+  } else {
+    closer.innerHTML = '<i class="fa fa-angle-down"></i>';
+    // Set the transition delay for each list item
+    let allFieldset = article.querySelectorAll("fieldset");
+    for (let i = allFieldset.length - 1; i >= 0; i--) {
+      let fieldset = allFieldset[i];
+      let delay = (allFieldset.length - i - 1) * 100 + 100;
+      fieldset.style.transitionDelay = delay + "ms";
+    }
+  }
+}

@@ -342,7 +342,7 @@ displayMenu();
 function displayMenu() {
   categories.forEach((type) => {
     menuBtnDOM.innerHTML += `
-      <button>
+      <button onclick="click_Tag('${type}')">
         <a class="reference" href="#${type}">
           <img src="./icons/${type}.png">
           <div>${type}</div>
@@ -383,6 +383,10 @@ function capitalizeFirstLetter(s) {
   return s[0].toUpperCase() + s.slice(1);
 }
 
+function click_Tag(type) {
+  document.querySelector(`a[href="#${type}"]`).click();
+}
+
 function toggleArticle(id) {
   const target = document.getElementById(id);
   const closer = document.getElementById(`closer${id.slice(7)}`);
@@ -417,6 +421,7 @@ scrollLinks.forEach((link) => {
     window.scrollTo({
       left: 0,
       top: position,
+      behavior: "smooth",
     });
   });
 });

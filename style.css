@@ -55,6 +55,7 @@ a:active {
 }
 body {
   margin: 0;
+  scroll-behavior: smooth;
 }
 #body {
   background: var(--body-bg);
@@ -131,6 +132,7 @@ main {
   text-align: center;
   border-radius: 0.35rem;
   border: var(--btn-border);
+  cursor: pointer;
 }
 #btn-group img {
   width: 2rem;
@@ -228,6 +230,7 @@ article fieldset {
   z-index: 5;
   display: none;
   border-radius: 50%;
+  cursor: pointer;
 }
 #wp-btn {
   left: 6vw;
@@ -323,15 +326,15 @@ footer div div:last-child {
 
 @keyframes zoom {
   0% {
-    transform: scale(1); /* start at the normal scale */
+    transform: scale(1);
     color: rgb(255, 255, 255);
   }
   50% {
-    transform: scale(1.3); /* zoom in to 150% */
+    transform: scale(1.3);
     color: rgb(161, 161, 161);
   }
   100% {
-    transform: scale(1); /* back to the normal scale */
+    transform: scale(1);
     color: rgb(255, 255, 255);
   }
 }

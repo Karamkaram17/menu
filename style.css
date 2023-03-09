@@ -1,6 +1,6 @@
 :root {
   /* body */
-  --body-bg: url("./backgrounds/background.jpg");
+  --body-bg: inherit;
   /* header */
   --header-bg: inherit;
   --header-color: white;
@@ -8,6 +8,7 @@
   /* btn div */
   --btn-div-bg: rgba(0, 0, 0, 0.54);
   --btn-div-shadow-box: 0 0 20px rgb(0, 0, 0);
+  --number-of-btn: 8;
   --btn-bg: rgb(222, 189, 146);
   --btn-border: 1px solid black;
   --btn-color: darkblue;
@@ -73,18 +74,18 @@ header {
   color: var(--header-color);
   background: var(--header-bg);
   height: calc(100vw);
-  max-height: calc(8 * var(--btn-width));
+  max-height: calc(var(--number-of-btn) * var(--btn-width));
   margin-bottom: 1rem;
 }
 #header-img-container {
   margin: auto;
   position: relative;
   width: 100%;
-  max-width: calc(8 * var(--btn-width));
+  max-width: calc(var(--number-of-btn) * var(--btn-width));
 }
 header img {
   width: 100%;
-  max-width: calc(8 * var(--btn-width));
+  max-width: calc(var(--number-of-btn) * var(--btn-width));
   margin: auto;
   box-shadow: var(--header-box-shadow);
 }
@@ -108,15 +109,22 @@ header i {
 /* ============= menu div ============= */
 main {
   width: 90vw;
-  max-width: calc(8 * var(--btn-width));
+  max-width: calc(var(--number-of-btn) * var(--btn-width) - 1vw);
   margin: auto;
 }
-
+.bg-img {
+  min-width: 100vw;
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  z-index: -1000;
+  overflow: hidden;
+}
 /* ============= sticky buttons div ============= */
 #btn-group {
   margin: 0.5rem auto 1rem auto;
-  width: 91vw;
-  max-width: calc(8 * var(--btn-width));
+  width: 92vw;
+  max-width: calc(var(--number-of-btn) * var(--btn-width));
   display: grid;
   grid-template-columns: repeat(8, var(--btn-width));
   overflow-x: scroll;
@@ -197,14 +205,10 @@ article {
   background: var(--article-bg);
   border-bottom-right-radius: 0.35rem;
   border-bottom-left-radius: 0.35rem;
-  border-top: var(--article-border);
   padding: 0.35rem;
   padding-top: 0rem;
-  max-height: 0;
   overflow: hidden;
   display: block;
-  transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out,
-    border 0.5s ease-out;
 }
 .show {
   border-top: var(--article-border);
@@ -214,8 +218,8 @@ article {
   opacity: 1;
 }
 .hide {
-  padding: 0;
   border-top: none;
+  max-height: 0;
 }
 article fieldset {
   background: var(--fieldset-bg);
@@ -226,7 +230,7 @@ article fieldset {
   margin-bottom: 0.65rem;
   min-height: 2rem;
   opacity: 0;
-  transition: opacity 0.2s ease-out;
+  transition: opacity 0.1s ease-in-out;
 }
 .title {
   font-size: var(--item-font-size);

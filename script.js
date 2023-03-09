@@ -340,6 +340,8 @@ data.forEach(
 
 displayMenu();
 function displayMenu() {
+  menuBtnDOM.innerHTML = "";
+  menuBodyDOM.innerHTML = "";
   categories.forEach((type) => {
     menuBtnDOM.innerHTML += `
       <button onclick="click_Tag('${type}')">
@@ -359,7 +361,6 @@ function displayMenu() {
         </button>`;
 
     const article = document.createElement("article");
-    article.id = `article-${type}`;
     article.className = "dropdown-body show";
     section.appendChild(article);
     const newItems = data.filter((i) => i.category === type);
@@ -379,21 +380,49 @@ function capitalizeFirstLetter(s) {
   return s[0].toUpperCase() + s.slice(1);
 }
 
-function click_Tag(type) {
-  document.querySelector(`a[href="#${type}"]`).click();
+function click_Tag(id) {
+  document.querySelector(`a[href="#${id}"]`).click();
 }
 
-function toggleArticle(id) {
-  const target = document.getElementById(id);
-  const closer = document.getElementById(`closer${id.slice(7)}`);
-  if (target.style.display != "none") {
-    target.style.display = "none";
-    target.style.borderTop = "none";
-    closer.innerHTML = '<i class="fa fa-angle-down"></i>';
+function toggleDropdown(type) {
+  let section = document.querySelector(`#${type}`);
+  let btn = section.querySelector("button");
+  let upDownAngle = btn.querySelector(".closer");
+  let article = section.querySelector(`article`);
+  let allFieldset = article.querySelectorAll("fieldset");
+
+  btn.classList.toggle("animate");
+  article.classList.toggle("show");
+  article.classList.toggle("hide");
+
+  let length = allFieldset.length;
+  let articleDelayNb;
+  let delayNb = 0.1;
+  length < 4
+    ? (articleDelayNb = 0.4)
+    : length < 10
+    ? (articleDelayNb = length * delayNb)
+    : (articleDelayNb = 1);
+
+  delayNb = articleDelayNb / allFieldset.length;
+
+  article.style.transition = `all ${articleDelayNb}s `;
+  if (article.classList.contains("show")) {
+    upDownAngle.innerHTML = '<i class="fa fa-angle-up"></i>';
+    // Add a delay to each list item
+    for (let i = 0; i < allFieldset.length; i++) {
+      let fieldset = allFieldset[i];
+      let delay = i * delayNb;
+      fieldset.style.transitionDelay = delay + "s";
+    }
   } else {
-    target.style.display = "block";
-    target.style.borderTop = "1px solid black";
-    closer.innerHTML = '<i class="fa fa-angle-up"></i>';
+    upDownAngle.innerHTML = '<i class="fa fa-angle-down"></i>';
+    // Set the transition delay for each list item
+    for (let i = allFieldset.length - 1; i >= 0; i--) {
+      let fieldset = allFieldset[i];
+      let delay = (allFieldset.length - i - 1) * delayNb + delayNb;
+      fieldset.style.transitionDelay = delay + "s";
+    }
   }
 }
 
@@ -437,42 +466,3 @@ window.addEventListener("scroll", () => {
     upBtn.style.display = "none";
   }
 });
-
-function toggleDropdown(type) {
-  let newData = data.filter((i) => i.category === type);
-  let section = document.getElementById(`${type}`);
-  let closer = section.querySelector(".closer");
-  let btn = section.querySelector("button");
-  btn.classList.toggle("animate");
-  let article = document.getElementById(`article-${type}`);
-  article.classList.toggle("show");
-  article.classList.toggle("hide");
-
-  // If the dropdown body is opened, populate it with data from the array
-  if (article.classList.contains("show")) {
-    article.innerHTML = "";
-    closer.innerHTML = '<i class="fa fa-angle-up"></i>';
-    for (let i = 0; i < newData.length; i++) {
-      let fieldset = document.createElement("fieldset");
-      fieldset.innerHTML = `
-        <legend class="title">${newData[i].name}</legend>
-        <div class="description">${newData[i].description}</div>
-        <div class="price">${newData[i].price}</div>`;
-      article.appendChild(fieldset);
-
-      // Add a delay to each list item
-      let delay = i * 100 + 100;
-      fieldset.style.transitionDelay = delay + "ms";
-    }
-    // If the dropdown body is closed, remove the data and delay from each list item
-  } else {
-    closer.innerHTML = '<i class="fa fa-angle-down"></i>';
-    // Set the transition delay for each list item
-    let allFieldset = article.querySelectorAll("fieldset");
-    for (let i = allFieldset.length - 1; i >= 0; i--) {
-      let fieldset = allFieldset[i];
-      let delay = (allFieldset.length - i - 1) * 100 + 100;
-      fieldset.style.transitionDelay = delay + "ms";
-    }
-  }
-}

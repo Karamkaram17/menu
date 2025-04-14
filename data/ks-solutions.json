@@ -1,0 +1,792 @@
+{
+  "store": {
+    "sm": {
+      "whatsappUrl": "https://api.whatsapp.com/send/?phone=%2B9613574745&text&type=phone_number&app_absent=0",
+      "location": "Ehden , Near Saydet Al Hosn",
+      "locationTranslation": {
+        "ar": "اهدن"
+      },
+      "locationUrl": "https://goo.gl/maps/KHyCns9iBLu6aGkE8",
+      "instagramUrl": "https://www.instagram.com/moonlightehden?igsh=dzk3MjBmdXlyOWh4",
+      "facebookUrl": "hg"
+    },
+    "_id": "6710349f18e86cd51a71ebee",
+    "menuId": "66d93fe82dfd45c14807f8bc",
+    "currency": "$",
+    "languages": ["en"],
+    "mainLang": "en",
+    "phoneNumber": "+9613574574",
+    "displayedPhoneNumber": "03 574 574",
+    "templateId": "1",
+    "storeLogo": "assets/imgs/moonlight.png",
+    "storeName": "Moonlight",
+    "aboutUs": "Founded in 1989, our family-owned restaurant nestled in the charming town of Ehden is a culinary gem with a rich history and tradition. With deep roots in the local community, we take pride in offering a warm and inviting atmosphere where guests feel like part of the family. From generation to generation, our commitment to excellence shines through in every dish we serve, showcasing the finest flavors of Lebanese cuisine. Step into our restaurant and embark on a gastronomic journey that celebrates our passion for food, family, and tradition. Experience the warmth of Lebanese hospitality and the taste of authentic flavors that have delighted diners for over three decades.",
+    "aboutUsTranslation": {
+      "ar": "تأسس مطعمنا العائلي في عام 1989، وهو مطعم جوهري مطل في بلدة إهدن الساحرة مع تاريخ وتقاليد غنية. مع جذور عميقة في المجتمع المحلي، نحن فخورون بتقديم جو دافئ ومرحب حيث يشعر الضيوف بأنهم جزء من العائلة. من جيل إلى جيل، يتجلى التزامنا بالتميز في كل طبق نقدمه، مع عرض أرقى نكهات المطبخ اللبناني. ادخل مطعمنا وابدأ في رحلة غذائية تحتفي بشغفنا بالطعام والعائلة والتقاليد. اكتشف دفء الضيافة اللبنانية وطعم النكهات الأصيلة التي أسرت الزبائن لأكثر من ثلاثة عقود.",
+      "fr": "Fondé en 1989, notre restaurant familial niché dans la charmante ville d'Ehden est un joyau culinaire avec une histoire et une tradition riches. Avec des racines profondes dans la communauté locale, nous sommes fiers d'offrir une atmosphère chaleureuse et accueillante où les clients se sentent comme faisant partie de la famille. De génération en génération, notre engagement envers l'excellence se reflète dans chaque plat que nous servons, mettant en valeur les saveurs les plus fines de la cuisine libanaise. Entrez dans notre restaurant et embarquez pour un voyage gastronomique qui célèbre notre passion pour la nourriture, la famille et la tradition. Découvrez la chaleur de l'hospitalité libanaise et le goût des saveurs authentiques qui ravissent les convives depuis plus de trois décennies."
+    },
+    "createdAt": "2024-10-16T21:48:15.274Z",
+    "updatedAt": "2024-10-16T21:48:15.274Z",
+    "__v": 0
+  },
+  "categories": [
+    {
+      "_id": "6710349f18e86cd51a71ebf1",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "label": "sandwiches",
+      "order": 1,
+      "img": "assets/icons/sandwiches.png",
+      "translation": {
+        "fr": "sandwichs",
+        "ar": "السندويشات"
+      },
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.279Z",
+      "updatedAt": "2024-10-16T21:48:15.279Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ebf2",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "label": "plates",
+      "order": 2,
+      "img": "assets/icons/plates.png",
+      "translation": {
+        "fr": "assiette",
+        "ar": "أطباق"
+      },
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.280Z",
+      "updatedAt": "2024-10-16T21:48:15.280Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ebf3",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "label": "pizzas",
+      "order": 3,
+      "img": "assets/icons/pizzas.png",
+      "translation": {
+        "ar": "بيتزا",
+        "fr": "pizzas"
+      },
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.280Z",
+      "updatedAt": "2024-10-16T21:48:15.280Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ebf4",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "label": "salads",
+      "order": 4,
+      "img": "assets/icons/salads.png",
+      "translation": {
+        "ar": "سلطة",
+        "fr": "salades"
+      },
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.280Z",
+      "updatedAt": "2024-10-16T21:48:15.280Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ebf5",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "label": "fries",
+      "order": 5,
+      "img": "assets/icons/fries.png",
+      "bgImg": null,
+      "translation": {
+        "ar": "بطاطس مقلية",
+        "fr": "frites"
+      },
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.280Z",
+      "updatedAt": "2024-10-16T21:48:15.280Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ebf6",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "label": "desserts",
+      "order": 6,
+      "img": "assets/icons/cake.png",
+      "translation": {
+        "fr": "desserts",
+        "ar": "الحلويات"
+      },
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.280Z",
+      "updatedAt": "2024-10-16T21:48:15.280Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ebf7",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "label": "dips",
+      "order": 7,
+      "img": "assets/icons/dips.png",
+      "translation": {
+        "ar": "صلصة",
+        "fr": "trempettes"
+      },
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.280Z",
+      "updatedAt": "2024-10-16T21:48:15.280Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ebf8",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "label": "drinks",
+      "order": 8,
+      "img": "assets/icons/drinks.png",
+      "translation": {
+        "fr": "boissons",
+        "ar": "مشروبات"
+      },
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.280Z",
+      "updatedAt": "2024-10-16T21:48:15.280Z"
+    }
+  ],
+  "sub_categories": [
+    {
+      "_id": "6710349f18e86cd51a71ec02",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "label": "sandwiches",
+      "order": 1,
+      "img": "assets/icons/sandwiches.png",
+      "translation": {
+        "fr": "sandwichs",
+        "ar": "السندويشات"
+      },
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.283Z",
+      "updatedAt": "2024-10-16T21:48:15.283Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ec03",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "label": "plates",
+      "order": 2,
+      "img": "assets/icons/plates.png",
+      "translation": {
+        "fr": "assiette",
+        "ar": "أطباق"
+      },
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.284Z",
+      "updatedAt": "2024-10-16T21:48:15.284Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ec04",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "label": "pizzas",
+      "order": 3,
+      "img": "assets/icons/pizzas.png",
+      "translation": {
+        "ar": "بيتزا",
+        "fr": "pizzas"
+      },
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.284Z",
+      "updatedAt": "2024-10-16T21:48:15.284Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ec05",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "label": "salads",
+      "order": 4,
+      "img": "assets/icons/salads.png",
+      "translation": {
+        "ar": "سلطة",
+        "fr": "salades"
+      },
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.284Z",
+      "updatedAt": "2024-10-16T21:48:15.284Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ec06",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "label": "fries",
+      "order": 5,
+      "img": "assets/icons/fries.png",
+      "bgImg": null,
+      "translation": {
+        "ar": "بطاطس مقلية",
+        "fr": "frites"
+      },
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.284Z",
+      "updatedAt": "2024-10-16T21:48:15.284Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ec07",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "label": "desserts",
+      "order": 6,
+      "img": "assets/icons/cake.png",
+      "translation": {
+        "fr": "desserts",
+        "ar": "الحلويات"
+      },
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.284Z",
+      "updatedAt": "2024-10-16T21:48:15.284Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ec08",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "label": "dips",
+      "order": 7,
+      "img": "assets/icons/dips.png",
+      "translation": {
+        "ar": "صلصة",
+        "fr": "trempettes"
+      },
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.284Z",
+      "updatedAt": "2024-10-16T21:48:15.284Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ec09",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "label": "drinks",
+      "order": 8,
+      "img": "assets/icons/drinks.png",
+      "translation": {
+        "fr": "boissons",
+        "ar": "مشروبات"
+      },
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.284Z",
+      "updatedAt": "2024-10-16T21:48:15.284Z"
+    }
+  ],
+  "items": [
+    {
+      "_id": "6710349f18e86cd51a71ec13",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "subcategoryId": "6710349f18e86cd51a71ec02",
+      "label": "Hamburger",
+      "description": "Beef patty, sauce, coleslow, tomatoes, pickles",
+      "order": 1,
+      "price": 10,
+      "translation": {
+        "ar": "همبرغر",
+        "fr": "hamburger"
+      },
+      "descriptionTranslation": {
+        "fr": "Galette de boeuf, sauce, coleslow, tomates, cornichons",
+        "ar": "شريحة لحم بقري، صوص، كول سلو، طماطم، مخلل"
+      },
+      "sizes": [],
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.294Z",
+      "updatedAt": "2024-10-16T21:48:15.294Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ec14",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "subcategoryId": "6710349f18e86cd51a71ec02",
+      "label": "Cheese Burger",
+      "description": "Beef patty, Cheese, sauce, coleslow, tomatoes, pickles",
+      "order": 2,
+      "price": 1,
+      "sizes": [],
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.294Z",
+      "updatedAt": "2024-10-16T21:48:15.294Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ec15",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "subcategoryId": "6710349f18e86cd51a71ec02",
+      "label": "Double Cheese Burger",
+      "description": "2 Beef patty, 2 Cheese, sauce, coleslow, tomatoes, pickles",
+      "order": 3,
+      "price": 10,
+      "sizes": [],
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.294Z",
+      "updatedAt": "2024-10-16T21:48:15.294Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ec16",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "subcategoryId": "6710349f18e86cd51a71ec02",
+      "label": "Zoro Burger",
+      "description": "Beef patty, Cheese, ham, sauce, coleslow, tomatoes, pickles",
+      "order": 4,
+      "price": 10,
+      "sizes": [],
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.294Z",
+      "updatedAt": "2024-10-16T21:48:15.294Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ec17",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "subcategoryId": "6710349f18e86cd51a71ec02",
+      "label": "Chiken Breast Burger",
+      "description": "Grilled chicken, fries, garlic, mayo, lettuce, pickles",
+      "order": 5,
+      "price": 10,
+      "sizes": [],
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.294Z",
+      "updatedAt": "2024-10-16T21:48:15.294Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ec18",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "subcategoryId": "6710349f18e86cd51a71ec02",
+      "label": "Crispy Chiken Burger",
+      "description": "Crispy chicken, cheese, fries, garlic, mayo, lettuce, pickles",
+      "order": 6,
+      "price": 10,
+      "sizes": [],
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.294Z",
+      "updatedAt": "2024-10-16T21:48:15.294Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ec19",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "subcategoryId": "6710349f18e86cd51a71ec02",
+      "label": "Steak & Cheese",
+      "description": "Steak, cheese, mushrooms, mayo, lettuce, pickles",
+      "order": 7,
+      "price": 10,
+      "sizes": [],
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.294Z",
+      "updatedAt": "2024-10-16T21:48:15.294Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ec1a",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "subcategoryId": "6710349f18e86cd51a71ec02",
+      "label": "Chiken Fajitas",
+      "description": "Grilled chicken, cheese, mushrooms, onions, peppers, soy sauce, mayo, lettuce, pickles",
+      "order": 8,
+      "price": 10,
+      "sizes": [],
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.294Z",
+      "updatedAt": "2024-10-16T21:48:15.294Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ec1b",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "subcategoryId": "6710349f18e86cd51a71ec02",
+      "label": "Philadelphia Steak",
+      "description": "Steak, cheese, mushrooms, onions, peppers, soy sauce, mayo, lettuce, pickles",
+      "order": 9,
+      "price": 10,
+      "sizes": [],
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.294Z",
+      "updatedAt": "2024-10-16T21:48:15.294Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ec1c",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "subcategoryId": "6710349f18e86cd51a71ec02",
+      "label": "Tawook",
+      "description": "Grilled Tawouk, fries, mayo, lettuce, pickles",
+      "order": 10,
+      "price": 10,
+      "sizes": [],
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.294Z",
+      "updatedAt": "2024-10-16T21:48:15.294Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ec1d",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "subcategoryId": "6710349f18e86cd51a71ec02",
+      "label": "Sujuk",
+      "description": "Sujuk, mayo, lettuce, tomatoes, pickles",
+      "order": 11,
+      "price": 10,
+      "sizes": [],
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.294Z",
+      "updatedAt": "2024-10-16T21:48:15.294Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ec1e",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "subcategoryId": "6710349f18e86cd51a71ec02",
+      "label": "Cheese Sujuk",
+      "description": "Sujuk, cheese, mayo, lettuce, tomatoes, pickles",
+      "order": 12,
+      "price": 10,
+      "sizes": [],
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.294Z",
+      "updatedAt": "2024-10-16T21:48:15.294Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ec1f",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "subcategoryId": "6710349f18e86cd51a71ec02",
+      "label": "Submarine",
+      "description": "Cheese, ham, salami, mayo, mustard, tomatoes, lettuce, pickles",
+      "order": 13,
+      "price": 10,
+      "sizes": [],
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.294Z",
+      "updatedAt": "2024-10-16T21:48:15.294Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ec20",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "subcategoryId": "6710349f18e86cd51a71ec02",
+      "label": "Hot Dog",
+      "description": "Hot dog, ketchup, mayo, mustard, tomatoes, lettuce, pickles",
+      "order": 14,
+      "price": 10,
+      "sizes": [],
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.294Z",
+      "updatedAt": "2024-10-16T21:48:15.294Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ec21",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "subcategoryId": "6710349f18e86cd51a71ec02",
+      "label": "Tuna Fish",
+      "description": "Tuna, mayo, mustard, lettuce, tomatoes, pickles",
+      "order": 15,
+      "price": 10,
+      "sizes": [],
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.294Z",
+      "updatedAt": "2024-10-16T21:48:15.294Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ec22",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "subcategoryId": "6710349f18e86cd51a71ec03",
+      "label": "Chiken Tenders",
+      "description": "5 pieces of crispy chicken, served with coleslaw, fries and garlic mayo dip",
+      "order": 16,
+      "price": 10,
+      "sizes": [],
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.294Z",
+      "updatedAt": "2024-10-16T21:48:15.294Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ec23",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "subcategoryId": "6710349f18e86cd51a71ec03",
+      "label": "Chiken Fajitas Plate",
+      "description": "",
+      "order": 17,
+      "price": 10,
+      "sizes": [],
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.294Z",
+      "updatedAt": "2024-10-16T21:48:15.294Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ec24",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "subcategoryId": "6710349f18e86cd51a71ec03",
+      "label": "Hamburger Plate",
+      "description": "2 Beef patties served with coleslaw, fries and one burger bun",
+      "order": 18,
+      "price": 10,
+      "sizes": [],
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.294Z",
+      "updatedAt": "2024-10-16T21:48:15.294Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ec25",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "subcategoryId": "6710349f18e86cd51a71ec03",
+      "label": "Cheese Burger Plate",
+      "description": "2 Beef patties with cheese served with coleslaw, fries and one burger bun",
+      "order": 19,
+      "price": 10,
+      "sizes": [],
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.295Z",
+      "updatedAt": "2024-10-16T21:48:15.295Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ec26",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "subcategoryId": "6710349f18e86cd51a71ec03",
+      "label": "Chiken Breast Burger Plate",
+      "description": "2 Grilled chicken served with coleslaw, fries, garlic mayo dip and one burger bun",
+      "order": 20,
+      "price": 10,
+      "sizes": [],
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.295Z",
+      "updatedAt": "2024-10-16T21:48:15.295Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ec27",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "subcategoryId": "6710349f18e86cd51a71ec03",
+      "label": "Tawouk Plate",
+      "description": "Grilled tawouk served with coleslaw, fries, garlic mayo dip and lebanese bread",
+      "order": 21,
+      "price": 10,
+      "sizes": [],
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.295Z",
+      "updatedAt": "2024-10-16T21:48:15.295Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ec28",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "subcategoryId": "6710349f18e86cd51a71ec04",
+      "label": "Pizza Peperoni",
+      "description": "Pepperoni, cheese, mushrooms, sauce",
+      "order": 22,
+      "price": 10,
+      "sizes": [],
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.295Z",
+      "updatedAt": "2024-10-16T21:48:15.295Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ec29",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "subcategoryId": "6710349f18e86cd51a71ec04",
+      "label": "Pizza Chiken",
+      "description": "Chicken, cheese, mushrooms, sauce",
+      "order": 23,
+      "price": 10,
+      "sizes": [],
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.295Z",
+      "updatedAt": "2024-10-16T21:48:15.295Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ec2a",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "subcategoryId": "6710349f18e86cd51a71ec04",
+      "label": "Pizza Regular",
+      "description": "Ham, salami, cheese, olives, mushrooms, green pepper, sauce",
+      "order": 24,
+      "price": 10,
+      "sizes": [],
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.295Z",
+      "updatedAt": "2024-10-16T21:48:15.295Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ec2b",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "subcategoryId": "6710349f18e86cd51a71ec04",
+      "label": "Pizza margarita",
+      "description": "Cheese, sauce",
+      "order": 25,
+      "price": 10,
+      "sizes": [],
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.295Z",
+      "updatedAt": "2024-10-16T21:48:15.295Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ec2c",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "subcategoryId": "6710349f18e86cd51a71ec04",
+      "label": "Pizza Vegetarian",
+      "description": "Cheese, mushrooms, corn, green pepper, olives, sauce",
+      "order": 26,
+      "price": 10,
+      "sizes": [],
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.295Z",
+      "updatedAt": "2024-10-16T21:48:15.295Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ec2d",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "subcategoryId": "6710349f18e86cd51a71ec04",
+      "label": "Pizza Tuna",
+      "description": "Tuna, mushrooms, tomatoes, green pepper, onions, sauce",
+      "order": 27,
+      "price": 10,
+      "sizes": [],
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.295Z",
+      "updatedAt": "2024-10-16T21:48:15.295Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ec2e",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "subcategoryId": "6710349f18e86cd51a71ec05",
+      "label": "Mixed Salad",
+      "description": "Lettuce, tomatoes,cucumbers, palmitos, artichokes, corn, asparagus",
+      "order": 28,
+      "price": 10,
+      "sizes": [],
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.295Z",
+      "updatedAt": "2024-10-16T21:48:15.295Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ec2f",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "subcategoryId": "6710349f18e86cd51a71ec05",
+      "label": "Chef Salad",
+      "description": "Lettuce, tomatoes, cucumbers, tuna, ham, corn, cheese",
+      "order": 29,
+      "price": 10,
+      "sizes": [],
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.295Z",
+      "updatedAt": "2024-10-16T21:48:15.295Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ec30",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "subcategoryId": "6710349f18e86cd51a71ec05",
+      "label": "Season Salad",
+      "description": "Lettuce, tomatoes, cucumbers, corn",
+      "order": 30,
+      "price": 10,
+      "sizes": [],
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.295Z",
+      "updatedAt": "2024-10-16T21:48:15.295Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ec31",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "subcategoryId": "6710349f18e86cd51a71ec05",
+      "label": "Rocca Salad",
+      "description": "",
+      "order": 31,
+      "price": 10,
+      "sizes": [],
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.295Z",
+      "updatedAt": "2024-10-16T21:48:15.295Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ec32",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "subcategoryId": "6710349f18e86cd51a71ec05",
+      "label": "Cabbage Salad",
+      "description": "Cabbage, mayonnaise, corn",
+      "order": 32,
+      "price": 10,
+      "sizes": [],
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.295Z",
+      "updatedAt": "2024-10-16T21:48:15.295Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ec33",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "subcategoryId": "6710349f18e86cd51a71ec05",
+      "label": "Chiken Caesar Salad",
+      "description": "Iceberg, grilled chicken, croutons, caesar sauce",
+      "order": 33,
+      "price": 10,
+      "sizes": [],
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.295Z",
+      "updatedAt": "2024-10-16T21:48:15.295Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ec34",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "subcategoryId": "6710349f18e86cd51a71ec05",
+      "label": "Crab Salad",
+      "description": "Crab, lettuce, corn, carrots",
+      "order": 34,
+      "price": 10,
+      "sizes": [],
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.295Z",
+      "updatedAt": "2024-10-16T21:48:15.295Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ec35",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "subcategoryId": "6710349f18e86cd51a71ec06",
+      "label": "Fries sandwish",
+      "description": "Fries, coleslaw, pickles, ketchup",
+      "order": 35,
+      "price": 10,
+      "sizes": [],
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.295Z",
+      "updatedAt": "2024-10-16T21:48:15.295Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ec36",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "subcategoryId": "6710349f18e86cd51a71ec06",
+      "label": "Fries Plate",
+      "description": "",
+      "order": 36,
+      "price": 10,
+      "sizes": [],
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.295Z",
+      "updatedAt": "2024-10-16T21:48:15.295Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ec37",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "subcategoryId": "6710349f18e86cd51a71ec06",
+      "label": "Fries Box",
+      "description": "",
+      "order": 37,
+      "price": 10,
+      "sizes": [],
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.295Z",
+      "updatedAt": "2024-10-16T21:48:15.295Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ec38",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "subcategoryId": "6710349f18e86cd51a71ec07",
+      "label": "Chocoba",
+      "description": "",
+      "order": 38,
+      "price": 10,
+      "sizes": [],
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.295Z",
+      "updatedAt": "2024-10-16T21:48:15.295Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ec39",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "subcategoryId": "6710349f18e86cd51a71ec08",
+      "label": "Cocktail sauce",
+      "description": "",
+      "order": 39,
+      "price": 10,
+      "sizes": [],
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.296Z",
+      "updatedAt": "2024-10-16T21:48:15.296Z"
+    },
+    {
+      "_id": "6710349f18e86cd51a71ec3a",
+      "menuId": "66d93fe82dfd45c14807f8bc",
+      "subcategoryId": "6710349f18e86cd51a71ec08",
+      "label": "Garlic mayo",
+      "description": "",
+      "order": 40,
+      "price": 10,
+      "sizes": [],
+      "__v": 0,
+      "createdAt": "2024-10-16T21:48:15.296Z",
+      "updatedAt": "2024-10-16T21:48:15.296Z"
+    }
+  ]
+}

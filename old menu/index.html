@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Moonlight</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="loading-screen">
+      <p class="zoom">Moonlight</p>
+    </div>
+    <div id="body" style="display: none">
+      <img class="bg-img" src="./backgrounds/background.jpg" />
+      <header id="header">
+        <div id="header-img-container">
+          <img src="logos/main-logo.jpeg" alt="Moonlight-logo" />
+          <p>
+            <i><span class="location-pin"></span></i>
+            <a target="_blank" href="https://goo.gl/maps/KHyCns9iBLu6aGkE8"
+              >Ehden , Near Saydet Al Hosn</a
+            >
+          </p>
+        </div>
+      </header>
+
+      <div id="btn-group"></div>
+      <main>
+        <div id="menu-body"></div>
+      </main>
+
+      <div id="wp-btn">
+        <a
+          href="https://api.whatsapp.com/send/?phone=%2B9613574745&text&type=phone_number&app_absent=0"
+          target="_blank"
+          ><i class="fa fa-whatsapp"></i
+        ></a>
+      </div>
+
+      <div id="up-btn" onclick="click_Tag('header')">
+        <a class="reference" href="#header"><i class="fa fa-angle-up"></i></a>
+      </div>
+
+      <footer>
+        <p>
+          <a href="tel:+9613574745"><i class="fa">&#xf095;</i>03 574 745</a>
+        </p>
+        <div>
+          <div id="copy"></div>
+          <div>
+            Developed by
+            <a href="https://www.linkedin.com/in/karam-b-karam" target="_blank"
+              >Karam</a
+            >
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

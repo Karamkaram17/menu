@@ -1,0 +1,402 @@
+:root {
+  /* body */
+  --body-bg: inherit;
+  /* header */
+  --header-bg: inherit;
+  --header-color: white;
+  --header-box-shadow: 0 0 20px rgb(0, 0, 0);
+  /* btn div */
+  --btn-div-bg: rgba(0, 0, 0, 0.54);
+  --btn-div-shadow-box: 0 0 20px rgb(0, 0, 0);
+  --number-of-btn: 8;
+  --btn-bg: rgb(222, 189, 146);
+  --btn-border: 1px solid black;
+  --btn-color: darkblue;
+  --btn-font-size: 10px;
+  --btn-height: 60px;
+  --btn-width: 80px;
+  /* menu */
+  --section-bg: url("./backgrounds/background.jpg");
+  --section-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.737);
+  --section-border: 1px solid darkblue;
+  --section-btn-font-size: 1.1rem;
+  --section-btn-color: darkblue;
+  --section-btn-bg: inherit;
+  --article-bg: inherit;
+  --article-border: 1px solid black;
+  --fieldset-bg: inherit;
+  --fieldset-box-shadow: 0 2px 10px 1px rgba(0, 0, 0, 0.56);
+  --fieldset-border: 1px solid darkblue;
+  --item-color: darkblue;
+  --item-font-size: 1.1rem;
+  --description-color: rgb(19, 19, 86);
+  --description-font-size: 0.9rem;
+  --price-color: darkblue;
+  --price-font-size: 0.9rem;
+  /* footer */
+  --footer-bg: inherit;
+  --footer-color: black;
+  --footer-a-i-color: darkblue;
+  --footer-font-size: 1.3rem;
+  /* ref btn */
+  --wp-btn-bg: rgb(54, 147, 54);
+  --up-btn-bg: rgb(65, 65, 245);
+  --ref-btn-color: white;
+}
+
+.location-pin::before {
+  content: "\f041";
+  font-family: "FontAwesome";
+}
+
+/* ============= reset ============= */
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+}
+body {
+  margin: 0;
+  scroll-behavior: smooth;
+}
+#body {
+  background: var(--body-bg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+/* ============= header div ============= */
+header {
+  text-align: center;
+  color: var(--header-color);
+  background: var(--header-bg);
+  height: calc(100vw);
+  max-height: calc(var(--number-of-btn) * var(--btn-width));
+  margin-bottom: 1rem;
+}
+#header-img-container {
+  margin: auto;
+  position: relative;
+  width: 100%;
+  max-width: calc(var(--number-of-btn) * var(--btn-width));
+}
+header img {
+  width: 100%;
+  max-width: calc(var(--number-of-btn) * var(--btn-width));
+  margin: auto;
+  box-shadow: var(--header-box-shadow);
+}
+header p {
+  position: absolute;
+  z-index: 600;
+  bottom: 0.5rem;
+  width: 100%;
+  font-size: 0.9rem;
+  margin: 0;
+  padding: 0;
+}
+header a {
+  color: var(--header-color);
+}
+header i {
+  color: var(--header-color);
+  margin-right: 0.35rem;
+}
+
+/* ============= menu div ============= */
+main {
+  width: 90vw;
+  max-width: calc(var(--number-of-btn) * var(--btn-width) - 1vw);
+  margin: auto;
+}
+.bg-img {
+  min-width: 100vw;
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  z-index: -1000;
+  overflow: hidden;
+}
+/* ============= sticky buttons div ============= */
+#btn-group {
+  margin: 0.5rem auto 1rem auto;
+  width: 92vw;
+  max-width: calc(var(--number-of-btn) * var(--btn-width));
+  display: grid;
+  grid-template-columns: repeat(8, var(--btn-width));
+  overflow-x: scroll;
+  position: sticky;
+  top: 0px;
+  z-index: 1000;
+  background: var(--btn-div-bg);
+  border-radius: 0.35rem;
+  box-shadow: var(--btn-div-shadow-box);
+}
+#btn-group button {
+  height: var(--btn-height);
+  padding: 0;
+  font-size: var(--btn-font-size);
+  background: var(--btn-bg);
+  color: var(--btn-color);
+  text-align: center;
+  border-radius: 0.35rem;
+  border: var(--btn-border);
+  cursor: pointer;
+}
+#btn-group button:active {
+  zoom: 105%;
+}
+#btn-group img {
+  width: 2rem;
+  margin: auto;
+}
+#btn-group a {
+  color: var(--btn-color);
+  font-weight: bold;
+}
+
+/* =============== section ================ */
+section {
+  background: var(--section-bg);
+  border-radius: 0.35rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--section-box-shadow);
+  border: var(--section-border);
+}
+
+/* ============= section button ============= */
+.section-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-size: var(--section-btn-font-size);
+  font-weight: bold;
+  color: var(--section-btn-color);
+  background: var(--section-btn-bg);
+  border: none;
+  margin: 0;
+  border-radius: 0.35rem;
+  height: 3rem;
+  position: relative;
+  cursor: pointer;
+  animation: btnClick2 1s;
+}
+.animate {
+  animation: btnClick 1s;
+}
+.section-btn img {
+  width: 1.7em;
+  margin: 0 0.65rem 0 0;
+}
+.section-btn div {
+  position: absolute;
+  right: 1.25rem;
+}
+.section-btn i {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* ============= article ==============  */
+article {
+  background: var(--article-bg);
+  border-bottom-right-radius: 0.35rem;
+  border-bottom-left-radius: 0.35rem;
+  padding: 0.35rem;
+  padding-top: 0rem;
+  overflow: hidden;
+  display: block;
+}
+.show {
+  border-top: var(--article-border);
+  max-height: 1500px;
+}
+.show fieldset {
+  opacity: 1;
+}
+.hide {
+  border-top: none;
+  max-height: 0;
+}
+article fieldset {
+  background: var(--fieldset-bg);
+  border-radius: 0.65rem;
+  padding: 0.35rem;
+  border: var(--fieldset-border);
+  box-shadow: var(--fieldset-box-shadow);
+  margin-bottom: 0.65rem;
+  min-height: 2rem;
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out;
+}
+.title {
+  font-size: var(--item-font-size);
+  font-style: italic;
+  font-weight: bold;
+  color: var(--item-color);
+  margin-left: 0.65rem;
+  padding: 0 0.35rem;
+}
+.description {
+  font-size: var(--description-font-size);
+  color: var(--description-color);
+}
+.price {
+  font-size: var(--price-font-size);
+  padding: 0 1rem;
+  text-align: right;
+  color: var(--price-color);
+  font-weight: bold;
+}
+
+/* ============= reference links ============= */
+#wp-btn,
+#up-btn {
+  position: fixed;
+  bottom: 2rem;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  display: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+#wp-btn {
+  left: 6vw;
+  background-color: var(--wp-btn-bg);
+}
+#up-btn {
+  right: 6vw;
+  background-color: var(--up-btn-bg);
+}
+#wp-btn i,
+#up-btn i {
+  font-size: 1.6em;
+  color: var(--ref-btn-color);
+}
+#up-btn i {
+  font-weight: bold;
+  padding-bottom: 3px;
+}
+
+/* ============= footer ============= */
+footer {
+  position: relative;
+  margin: 1.2rem auto 0 auto;
+  max-width: 600px;
+  width: 85vw;
+  color: var(--footer-color);
+  text-align: center;
+  background: var(--footer-bg);
+  font-weight: bold;
+}
+footer p {
+  font-size: var(--footer-font-size);
+}
+footer i {
+  margin-right: 0.35rem;
+  vertical-align: middle;
+  color: var(--footer-a-i-color);
+  font-size: 1.5rem;
+}
+footer a {
+  color: var(--footer-a-i-color);
+  font-weight: bold;
+}
+footer div:first-of-type {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  padding: 0px 0.65rem;
+  font-size: 0.8rem;
+  color: var(--footer-Color);
+  box-shadow: var(--box-Shadow);
+  font-size: 0.7rem;
+}
+footer div div:last-child {
+  text-align: end;
+}
+
+@media (orientation: landscape) {
+  header {
+    height: calc(100vh - var(--btn-height) - 21px);
+  }
+  header img {
+    width: calc(100vh - var(--btn-height) - 28px);
+  }
+  #header-img-container {
+    width: calc(100vh - var(--btn-height) - 28px);
+  }
+}
+
+@media screen and (min-width: 670px) {
+  #wp-btn {
+    left: calc(50vw - 300px);
+  }
+  #up-btn {
+    right: calc(50vw - 300px);
+  }
+}
+
+/* loading page */
+#loading-screen {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  justify-content: center;
+  align-items: center;
+}
+#loading-screen p {
+  font-size: 2rem;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  font-family: monospace;
+}
+.zoom {
+  animation: zoom 5s linear infinite;
+}
+
+@keyframes zoom {
+  0% {
+    transform: scale(1);
+    color: rgb(255, 255, 255);
+  }
+  50% {
+    transform: scale(1.3);
+    color: rgb(161, 161, 161);
+  }
+  100% {
+    transform: scale(1);
+    color: rgb(255, 255, 255);
+  }
+}
+
+@keyframes btnClick {
+  0% {
+    font-size: var(--section-btn-font-size);
+  }
+  50% {
+    font-size: calc(var(--section-btn-font-size) + 0.15rem);
+  }
+  100% {
+    font-size: var(--section-btn-font-size);
+  }
+}
+
+@keyframes btnClick2 {
+  0% {
+    font-size: var(--section-btn-font-size);
+  }
+  50% {
+    font-size: calc(var(--section-btn-font-size) + 0.15rem);
+  }
+  100% {
+    font-size: var(--section-btn-font-size);
+  }
+}

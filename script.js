@@ -1,437 +1,187 @@
-const data = [
-  {
-    name: "Hamburger",
-    description: "Beef patty, sauce, coleslow, tomatoes, pickles",
-    price: "90,000 L.L",
-    category: "sandwiches",
-  },
-  {
-    name: "Cheese Burger",
-    description: "Beef patty, Cheese, sauce, coleslow, tomatoes, pickles",
-    price: "105,000 L.L",
-    category: "sandwiches",
-  },
-  {
-    name: "Double Cheese Burger",
-    description: "2 Beef patty, 2 Cheese, sauce, coleslow, tomatoes, pickles",
-    price: "180,000 L.L",
-    category: "sandwiches",
-  },
-  {
-    name: "Zoro Burger",
-    description: "Beef patty, Cheese, ham, sauce, coleslow, tomatoes, pickles",
-    price: "140,000 L.L",
-    category: "sandwiches",
-  },
-  {
-    name: "Chiken Breast Burger",
-    description: "Grilled chicken, fries, garlic, mayo, lettuce, pickles",
-    price: "85,000 L.L",
-    category: "sandwiches",
-  },
-  {
-    name: "Crispy Chiken Burger",
-    description:
-      "Crispy chicken, cheese, fries, garlic, mayo, lettuce, pickles",
-    price: "110,000 L.L",
-    category: "sandwiches",
-  },
-  {
-    name: "Steak & Cheese",
-    description: "Steak, cheese, mushrooms, mayo, lettuce, pickles",
-    price: "140,000 L.L",
-    category: "sandwiches",
-  },
-  {
-    name: "Chiken Fajitas",
-    description:
-      "Grilled chicken, cheese, mushrooms, onions, peppers, soy sauce, mayo, lettuce, pickles",
-    price: "115,000 L.L",
-    category: "sandwiches",
-  },
-  {
-    name: "Philadelphia Steak",
-    description:
-      "Steak, cheese, mushrooms, onions, peppers, soy sauce, mayo, lettuce, pickles",
-    price: "150,000 L.L",
-    category: "sandwiches",
-  },
-  {
-    name: "Tawook",
-    description: "Grilled Tawouk, fries, mayo, lettuce, pickles",
-    price: "100,000 L.L",
-    category: "sandwiches",
-  },
-  {
-    name: "Sujuk",
-    description: "Sujuk, mayo, lettuce, tomatoes, pickles",
-    price: "110,000 L.L",
-    category: "sandwiches",
-  },
-  {
-    name: "Cheese Sujuk",
-    description: "Sujuk, cheese, mayo, lettuce, tomatoes, pickles",
-    price: "130,000 L.L",
-    category: "sandwiches",
-  },
-  {
-    name: "Submarine",
-    description:
-      "Cheese, ham, salami, mayo, mustard, tomatoes, lettuce, pickles",
-    price: "125,000 L.L",
-    category: "sandwiches",
-  },
-  {
-    name: "Hot Dog",
-    description: "Hot dog, ketchup, mayo, mustard, tomatoes, lettuce, pickles",
-    price: "70,000 L.L",
-    category: "sandwiches",
-  },
-  {
-    name: "Tuna Fish",
-    description: "Tuna, mayo, mustard, lettuce, tomatoes, pickles",
-    price: "100,000 L.L",
-    category: "sandwiches",
-  },
-  {
-    name: "Chiken Tenders",
-    description:
-      "5 pieces of crispy chicken, served with coleslaw, fries and garlic mayo dip",
-    price: "160,000 L.L",
-    category: "plates",
-  },
-  {
-    name: "Chiken Fajitas Plate",
-    description: "",
-    price: "190,000 L.L",
-    category: "plates",
-  },
-  {
-    name: "Hamburger Plate",
-    description:
-      "2 Beef patties served with coleslaw, fries and one burger bun",
-    price: "170,000 L.L",
-    category: "plates",
-  },
-  {
-    name: "Cheese Burger Plate",
-    description:
-      "2 Beef patties with cheese served with coleslaw, fries and one burger bun",
-    price: "200,000 L.L",
-    category: "plates",
-  },
-  {
-    name: "Chiken Breast Burger Plate",
-    description:
-      "2 Grilled chicken served with coleslaw, fries, garlic mayo dip and one burger bun",
-    price: "160,000 L.L",
-    category: "plates",
-  },
-  {
-    name: "Tawouk Plate",
-    description:
-      "Grilled tawouk served with coleslaw, fries, garlic mayo dip and lebanese bread",
-    price: "170,000 L.L",
-    category: "plates",
-  },
-  {
-    name: "Pizza Peperoni",
-    description: "Pepperoni, cheese, mushrooms, sauce",
-    price: "200,000 L.L",
-    category: "pizzas",
-  },
-  {
-    name: "Pizza Chiken",
-    description: "Chicken, cheese, mushrooms, sauce",
-    price: "180,000 L.L",
-    category: "pizzas",
-  },
-  {
-    name: "Pizza Regular",
-    description: "Ham, salami, cheese, olives, mushrooms, green pepper, sauce",
-    price: "180,000 L.L",
-    category: "pizzas",
-  },
-  {
-    name: "Pizza margarita",
-    description: "Cheese, sauce",
-    price: "130,000 L.L",
-    category: "pizzas",
-  },
-  {
-    name: "Pizza Vegetarian",
-    description: "Cheese, mushrooms, corn, green pepper, olives, sauce",
-    price: "160,000 L.L",
-    category: "pizzas",
-  },
-  {
-    name: "Pizza Tuna",
-    description: "Tuna, mushrooms, tomatoes, green pepper, onions, sauce",
-    price: "150,000 L.L",
-    category: "pizzas",
-  },
-  {
-    name: "Mixed Salad",
-    description:
-      "Lettuce, tomatoes,cucumbers, palmitos, artichokes, corn, asparagus",
-    price: "",
-    category: "salads",
-  },
-  {
-    name: "Chef Salad",
-    description: "Lettuce, tomatoes, cucumbers, tuna, ham, corn, cheese",
-    price: "110,000 L.L",
-    category: "salads",
-  },
-  {
-    name: "Season Salad",
-    description: "Lettuce, tomatoes, cucumbers, corn",
-    price: "60,000 L.L",
-    category: "salads",
-  },
-  {
-    name: "Rocca Salad",
-    description: "",
-    price: "",
-    category: "salads",
-  },
-  {
-    name: "Cabbage Salad",
-    description: "Cabbage, mayonnaise, corn",
-    price: "40,000 L.L",
-    category: "salads",
-  },
-  {
-    name: "Chiken Caesar Salad",
-    description: "Iceberg, grilled chicken, croutons, caesar sauce",
-    price: "100,000 L.L",
-    category: "salads",
-  },
-  {
-    name: "Crab Salad",
-    description: "Crab, lettuce, corn, carrots",
-    price: "110,000 L.L",
-    category: "salads",
-  },
-  {
-    name: "Fries sandwish",
-    description: "Fries, coleslaw, pickles, ketchup",
-    price: "50,000 L.L",
-    category: "fries",
-  },
-  {
-    name: "Fries Plate",
-    description: "",
-    price: "60,000 L.L",
-    category: "fries",
-  },
-  {
-    name: "Fries Box",
-    description: "",
-    price: "50,000 L.L",
-    category: "fries",
-  },
-  {
-    name: "Chocoba",
-    description: "",
-    price: "35,000 L.L",
-    category: "desserts",
-  },
-  {
-    name: "Cocktail sauce",
-    description: "",
-    price: "5,000 L.L",
-    category: "dips",
-  },
-  {
-    name: "Garlic mayo",
-    description: "",
-    price: "8,000 L.L",
-    category: "dips",
-  },
-  {
-    name: "Soft Drinks",
-    description: "",
-    price: "25,000 L.L",
-    category: "drinks",
-  },
-  {
-    name: "Water (Small)",
-    description: "",
-    price: "10,000 L.L",
-    category: "drinks",
-  },
-  {
-    name: "Water (Big)",
-    description: "",
-    price: "15,000 L.L",
-    category: "drinks",
-  },
-  {
-    name: "Nescafe",
-    description: "",
-    price: "20,000 L.L",
-    category: "drinks",
-  },
-  {
-    name: "Cappuccino",
-    description: "",
-    price: "20,000 L.L",
-    category: "drinks",
-  },
-  {
-    name: "Tea",
-    description: "",
-    price: "15,000 L.L",
-    category: "drinks",
-  },
-  {
-    name: "Green Tea",
-    description: "",
-    price: "15,000 L.L",
-    category: "drinks",
-  },
-  {
-    name: "Camomile",
-    description: "",
-    price: "15,000 L.L",
-    category: "drinks",
-  },
-  {
-    name: "Almaza Beer",
-    description: "",
-    price: "40,000 L.L",
-    category: "drinks",
-  },
-  {
-    name: "Heineken Beer",
-    description: "",
-    price: "",
-    category: "drinks",
-  },
-  {
-    name: "Ananas Xtra",
-    description: "",
-    price: "20,000 L.L",
-    category: "drinks",
-  },
-  {
-    name: "Mexican Beer",
-    description: "",
-    price: "55,000 L.L",
-    category: "drinks",
-  },
-];
+loader();
 
-const body = document.querySelector("#body");
-window.onload = function () {
-  body.style.display = "block";
-  document.getElementById("loading-screen").style.display = "none";
-};
+document.title = MENU_DATA.store.storeName;
+
+// Set loader logo text
+const loaderLogo = document.getElementById("loader-logo");
+if (loaderLogo) {
+  loaderLogo.textContent = MENU_DATA.store.storeName;
+}
+
+if (MENU_DATA.store.storeLogo) {
+  const link = document.createElement("link");
+  link.rel = "shortcut icon";
+  link.href = MENU_DATA.store.storeLogo;
+  link.type = "image/x-icon";
+  document.head.appendChild(link);
+}
+
+const categories = MENU_DATA.sub_categories
+  .sort((a, b) => a.order - b.order)
+  .filter((c) => !c.hide)
+  .map((c) => ({
+    name: c.label,
+    icon: c.img,
+    picture: c.bgImg,
+    _id: c._id,
+  }));
+
+const data = MENU_DATA.items
+  .sort((a, b) => a.order - b.order)
+  .filter((c) => !c.hide)
+  .map((c) => ({
+    name: c.label,
+    description: c.description,
+    category: c.subcategoryId,
+    price: c.price,
+    isNew: c.is_New,
+    isStarred: c.is_Starred,
+    calories: c.calories,
+  }));
 
 const menuBtnDOM = document.getElementById("btn-group");
 const menuBodyDOM = document.getElementById("menu-body");
-let categories = [];
+const menuHeader = document.getElementById("header");
+const btnDom = document.querySelector("#btn-group");
+const content = document.getElementById("content");
+const progressBar = document.getElementById("progress");
 
-data.forEach(
-  (item) =>
-    !categories.includes(item.category) && categories.push(item.category)
-);
+menuHeader.innerHTML = `
+  ${
+    MENU_DATA.store.storeLogo
+      ? `
+          <div class="img-header">
+            <img
+              src="${MENU_DATA.store.storeLogo}"
+              alt="${MENU_DATA.store.storeName}"
+              class="bg-image"
+              loading="eager" />
+          </div>
+        `
+      : ""
+  }
+  ${
+    MENU_DATA.store.sm?.locationUrl
+      ? `
+          <div class="details">
+            <a
+              class="a-white"
+              href="${MENU_DATA.store.sm.locationUrl}"
+              target="_blank">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-geo-fill"
+                viewBox="0 0 16 16">
+                <path
+                  fill-rule="evenodd"
+                  d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999zm2.493 8.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.3 1.3 0 0 0-.37.265.3.3 0 0 0-.057.09V14l.002.008.016.033a.6.6 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.6.6 0 0 0 .146-.15l.015-.033L12 14v-.004a.3.3 0 0 0-.057-.09 1.3 1.3 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465s-2.462-.172-3.34-.465c-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411" />
+              </svg>
+              <span>${
+                MENU_DATA.store.sm.location ? MENU_DATA.store.sm.location : ""
+              }</span>
+            </a>
+          </div>
+        `
+      : ""
+  }
+  ${
+    MENU_DATA.store.sm?.instagramUrl
+      ? `
+          <div class="details">
+            <a href="${MENU_DATA.store.sm.instagramUrl}" target="_blank">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-instagram"
+                viewBox="0 0 16 16">
+                <path
+                  d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+              </svg>
+              ${MENU_DATA.store.storeName}
+            </a>
+          </div>
+        `
+      : ""
+  }
+  ${
+    MENU_DATA.store.sm?.facebookUrl
+      ? `
+          <div class="details">
+            <a href="${MENU_DATA.store.sm.facebookUrl}" target="_blank">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-facebook"
+                viewBox="0 0 16 16">
+                <path
+                  d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951" />
+              </svg>
+              ${MENU_DATA.store.storeName}
+            </a>
+          </div>
+        `
+      : ""
+  }
+  ${
+    MENU_DATA.store.phoneNumber
+      ? `
+          <div class="details">
+            <a href="tel:${MENU_DATA.store.phoneNumber}" class="a-white">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-telephone-fill"
+                viewBox="0 0 16 16">
+                <path
+                  fill-rule="evenodd"
+                  d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z" />
+              </svg>
+              ${
+                MENU_DATA.store.displayedPhoneNumber
+                  ? MENU_DATA.store.displayedPhoneNumber
+                  : MENU_DATA.store.phoneNumber
+              }
+            </a>
+          </div>
+        `
+      : ""
+  }
+`;
+
+if (MENU_DATA.store.sm?.whatsappUrl) {
+  const wp = document.createElement("div");
+  wp.id = "wp-btn";
+  wp.innerHTML = `
+    <a href="${MENU_DATA.store.sm.whatsappUrl}" target="_blank" style="padding-top: 5px;">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        fill="currentColor"
+        class="bi bi-whatsapp"
+        viewBox="0 0 16 16">
+        <path
+          d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232" />
+      </svg>
+    </a>
+  `;
+  content.appendChild(wp);
+}
 
 displayMenu();
-function displayMenu() {
-  menuBtnDOM.innerHTML = "";
-  menuBodyDOM.innerHTML = "";
-  categories.forEach((type) => {
-    menuBtnDOM.innerHTML += `
-      <button onclick="click_Tag('${type}')">
-        <a class="reference" href="#${type}">
-          <img src="./icons/${type}.png">
-          <div>${type}</div>
-        </a>
-      </button>`;
 
-    const section = document.createElement("section");
-    section.id = type;
-    section.innerHTML += `
-        <button class="section-btn"   onclick="toggleDropdown('${type}')">
-          <img src="./icons/${type}.png" />
-          <p>${capitalizeFirstLetter(type)}</p>
-          <div class='closer'><i class="fa fa-angle-up"></i></div>
-        </button>`;
+// Setup intersection observer for active category tracking
+setupIntersectionObserver();
 
-    const article = document.createElement("article");
-    article.className = "dropdown-body show";
-    section.appendChild(article);
-    const newItems = data.filter((i) => i.category === type);
-    newItems.forEach((item) => {
-      article.innerHTML += `
-        <fieldset>
-          <legend class="title">${item.name}</legend>
-          <div class="description">${item.description}</div>
-          <div class="price">${item.price}</div>
-        </fieldset>`;
-    });
-    menuBodyDOM.appendChild(section);
-  });
-}
-
-function capitalizeFirstLetter(s) {
-  return s[0].toUpperCase() + s.slice(1);
-}
-
-function click_Tag(id) {
-  document.querySelector(`a[href="#${id}"]`).click();
-}
-
-function toggleDropdown(type) {
-  let section = document.querySelector(`#${type}`);
-  let btn = section.querySelector("button");
-  let upDownAngle = btn.querySelector(".closer");
-  let article = section.querySelector(`article`);
-  let allFieldset = article.querySelectorAll("fieldset");
-
-  btn.classList.toggle("animate");
-  article.classList.toggle("show");
-  article.classList.toggle("hide");
-
-  let length = allFieldset.length;
-  let articleDelayNb;
-  let delayNb = 0.1;
-  length < 4
-    ? (articleDelayNb = 0.4)
-    : length < 10
-    ? (articleDelayNb = length * delayNb)
-    : (articleDelayNb = 1);
-
-  delayNb = articleDelayNb / allFieldset.length;
-
-  article.style.transition = `all ${articleDelayNb}s `;
-  if (article.classList.contains("show")) {
-    upDownAngle.innerHTML = '<i class="fa fa-angle-up"></i>';
-    // Add a delay to each list item
-    for (let i = 0; i < allFieldset.length; i++) {
-      let fieldset = allFieldset[i];
-      let delay = i * delayNb;
-      fieldset.style.transitionDelay = delay + "s";
-    }
-  } else {
-    upDownAngle.innerHTML = '<i class="fa fa-angle-down"></i>';
-    // Set the transition delay for each list item
-    for (let i = allFieldset.length - 1; i >= 0; i--) {
-      let fieldset = allFieldset[i];
-      let delay = (allFieldset.length - i - 1) * delayNb + delayNb;
-      fieldset.style.transitionDelay = delay + "s";
-    }
-  }
-}
-
-// footer
-let date = new Date().getFullYear();
-let copy = document.getElementById("copy");
-copy.innerHTML = `copyright &copy; ${date}`;
-
-//links
 const scrollLinks = document.querySelectorAll(".reference");
 scrollLinks.forEach((link) => {
   link.addEventListener("click", (e) => {
@@ -440,7 +190,7 @@ scrollLinks.forEach((link) => {
     const id = e.currentTarget.getAttribute("href").slice(1);
     const element = document.getElementById(id);
 
-    const navHeight = menuBtnDOM.getBoundingClientRect().height;
+    const navHeight = btnDom.getBoundingClientRect().height;
     let position = element.offsetTop - navHeight - 7;
 
     window.scrollTo({
@@ -451,18 +201,266 @@ scrollLinks.forEach((link) => {
   });
 });
 
+function loader() {
+  let loaded = false;
+  const progressBar = document.getElementById("progress");
+  let progress = 0;
+
+  // Update progress bar with CSS variable for smooth animation
+  const updateProgress = (value) => {
+    progress = value;
+    progressBar.style.setProperty("--progress", `${value}%`);
+  };
+
+  window.onload = function () {
+    loaded = true;
+    updateProgress(100);
+    setTimeout(() => {
+      content.style.display = "block";
+      document.getElementById("progress-bar").style.opacity = "0";
+      setTimeout(() => {
+        document.getElementById("progress-bar").style.display = "none";
+      }, 300);
+    }, 300);
+  };
+
+  document.addEventListener("DOMContentLoaded", function () {
+    updateProgress(20);
+    let interval = setInterval(function () {
+      if (loaded === true) return clearInterval(interval);
+      progress += 5;
+      updateProgress(Math.min(progress, 80));
+      if (progress >= 80) clearInterval(interval);
+    }, 100);
+    let SlowInterval = setInterval(function () {
+      if (loaded === true) return clearInterval(SlowInterval);
+      progress += 1;
+      updateProgress(Math.min(progress, 98));
+      if (progress >= 98) clearInterval(SlowInterval);
+    }, 500);
+  });
+}
+
+// Intersection Observer for active category highlighting and scroll animations
+function setupIntersectionObserver() {
+  const sections = document.querySelectorAll("section");
+  const buttons = document.querySelectorAll("#btn-group button");
+
+  // Observer for active category
+  const categoryObserverOptions = {
+    root: null,
+    rootMargin: "-20% 0px -60% 0px",
+    threshold: 0,
+  };
+
+  const categoryObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        buttons.forEach((btn) => {
+          btn.classList.remove("active");
+          if (btn.querySelector(`a[href="#${id}"]`)) {
+            btn.classList.add("active");
+            btn.scrollIntoView({
+              behavior: "smooth",
+              inline: "center",
+              block: "nearest",
+            });
+          }
+        });
+      }
+    });
+  }, categoryObserverOptions);
+
+  sections.forEach((section) => categoryObserver.observe(section));
+
+  // Observer for scroll animations
+  const scrollAnimationOptions = {
+    root: null,
+    rootMargin: "0px 0px -100px 0px",
+    threshold: 0.1,
+  };
+
+  const scrollObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove("scroll-hidden");
+        entry.target.classList.add("scroll-visible");
+
+        // Animate items within sections
+        if (entry.target.tagName === "SECTION") {
+          const items = entry.target.querySelectorAll(".item");
+          items.forEach((item, index) => {
+            setTimeout(() => {
+              item.classList.remove("scroll-hidden");
+              item.classList.add("scroll-visible");
+            }, index * 80);
+          });
+        }
+      }
+    });
+  }, scrollAnimationOptions);
+
+  // Add scroll-hidden class to all sections and items, then observe
+  sections.forEach((section, index) => {
+    // First section should be visible immediately
+    if (index === 0) {
+      section.classList.add("scroll-visible");
+      const items = section.querySelectorAll(".item");
+      items.forEach((item, itemIndex) => {
+        setTimeout(() => {
+          item.classList.add("scroll-visible");
+        }, itemIndex * 80);
+      });
+    } else {
+      section.classList.add("scroll-hidden");
+      const items = section.querySelectorAll(".item");
+      items.forEach((item) => {
+        item.classList.add("scroll-hidden");
+      });
+    }
+    scrollObserver.observe(section);
+  });
+
+  // Set first category button as active
+  if (buttons.length > 0) {
+    buttons[0].classList.add("active");
+  }
+}
+
+function displayMenu() {
+  menuBtnDOM.innerHTML = "";
+  menuBodyDOM.innerHTML = "";
+  categories.forEach((category) => {
+    menuBtnDOM.innerHTML += `
+      <button onclick="click_Tag('${category._id}')">
+        <a style="display: none" class="reference" href="#${category._id}"></a>
+        <div>${category.name}</div>
+      </button>`;
+
+    const section = document.createElement("section");
+    section.id = category._id;
+    section.innerHTML += `
+      <div class="section-header">
+        ${
+          category.picture
+            ? `<img src="${category.picture}" alt="${category.name}"/>`
+            : ""
+        }
+        <p>${capitalizeFirstLetter(category.name)}</p>
+      </div>`;
+
+    const article = document.createElement("article");
+    section.appendChild(article);
+    const newItems = data.filter((i) => i.category === category._id);
+    newItems.forEach((item) => {
+      const badges = [];
+      if (item.isNew) badges.push('<span class="badge badge-new">New</span>');
+      if (item.isStarred)
+        badges.push('<span class="badge badge-starred">★</span>');
+
+      article.innerHTML += `
+        <div class="item">
+          <div class="item-header">
+            <div class="item-name">${item.name}</div>
+            ${
+              badges.length > 0
+                ? `<div class="item-badges">${badges.join("")}</div>`
+                : ""
+            }
+          </div>
+          <div class="item-details">
+            <div class="description">
+              ${item.description || ""}
+              ${
+                item.calories
+                  ? `<span class="calories">${item.calories} cal</span>`
+                  : ""
+              }
+            </div>
+            <div class="price">${setPrice(item.price)}</div>
+          </div>
+        </div>`;
+    });
+    menuBodyDOM.appendChild(section);
+  });
+}
+
+function capitalizeFirstLetter(s) {
+  if (s && typeof s === "string") {
+    return s[0].toUpperCase() + s.slice(1);
+  }
+  return s;
+}
+
+function setPrice(p) {
+  if (typeof p === "number") {
+    return `${p}${MENU_DATA.store.currency}`;
+  } else if (typeof p === "string") {
+    return p;
+  }
+  return "";
+}
+
+function click_Tag(id) {
+  const link = document.querySelector(`a[href="#${id}"]`);
+  link && link.click();
+}
+
 //show and remove whatsapp and back to top links
 const wpBtn = document.getElementById("wp-btn");
 const upBtn = document.getElementById("up-btn");
 const appearPoint = window.innerHeight * 0.1;
 
 window.addEventListener("scroll", () => {
-  const scrollPosition = window.pageYOffset;
+  const scrollPosition = window.scrollY;
   if (scrollPosition >= appearPoint) {
-    wpBtn.style.display = "flex";
+    if (wpBtn) {
+      wpBtn.style.display = "flex";
+    }
     upBtn.style.display = "flex";
   } else {
-    wpBtn.style.display = "none";
+    if (wpBtn) {
+      wpBtn.style.display = "flex";
+    }
     upBtn.style.display = "none";
   }
 });
+
+async function callLogApi() {
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const queryParams = {};
+    for (const [key, value] of params.entries()) {
+      queryParams[key] = value;
+    }
+
+    const payload = {
+      uuid: localStorage.getItem("uuid"),
+      screenWidth: window.screen.width,
+      screenHeight: window.screen.height,
+      deviceOrientation: screen.orientation?.type || "unknown",
+      service: MENU_DATA.store.menuId,
+
+      platform: navigator.platform || "unknown",
+      language: navigator.language || "unknown",
+      timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+      queryParams,
+      locationHref: location.href,
+    };
+
+    const response = await fetch(
+      "https://main-server-u49f.onrender.com/api/v1/ks-solutions/logs",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      }
+    );
+
+    const uuid = await response.text();
+    localStorage.setItem("uuid", uuid);
+  } catch {}
+}
+
+callLogApi();

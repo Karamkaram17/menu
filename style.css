@@ -30,7 +30,11 @@ html {
 }
 
 body {
-  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-family:
+    "Segoe UI",
+    system-ui,
+    -apple-system,
+    sans-serif;
   background-color: #0f3460;
   background-image: linear-gradient(
     135deg,
@@ -53,7 +57,8 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: radial-gradient(
+  background-image:
+    radial-gradient(
       circle at 20% 80%,
       rgba(107, 188, 255, 0.08) 0%,
       transparent 50%
@@ -104,12 +109,16 @@ body::before {
 @keyframes glowText {
   0%,
   100% {
-    text-shadow: 0 0 10px rgba(107, 188, 255, 0.5),
-      0 0 20px rgba(107, 188, 255, 0.3), 0 0 30px rgba(107, 188, 255, 0.2);
+    text-shadow:
+      0 0 10px rgba(107, 188, 255, 0.5),
+      0 0 20px rgba(107, 188, 255, 0.3),
+      0 0 30px rgba(107, 188, 255, 0.2);
   }
   50% {
-    text-shadow: 0 0 20px rgba(107, 188, 255, 0.8),
-      0 0 40px rgba(107, 188, 255, 0.5), 0 0 60px rgba(107, 188, 255, 0.3);
+    text-shadow:
+      0 0 20px rgba(107, 188, 255, 0.8),
+      0 0 40px rgba(107, 188, 255, 0.5),
+      0 0 60px rgba(107, 188, 255, 0.3);
   }
 }
 
@@ -198,7 +207,8 @@ header {
   padding: 8px;
   background: var(--glass-bg);
   border: 3px solid var(--glass-border);
-  box-shadow: 0 10px 40px rgba(107, 188, 255, 0.28),
+  box-shadow:
+    0 10px 40px rgba(107, 188, 255, 0.28),
     inset 0 0 20px rgba(255, 255, 255, 0.1);
   transition: var(--transition-smooth);
   animation: pulse 3s ease-in-out infinite;
@@ -207,11 +217,13 @@ header {
 @keyframes pulse {
   0%,
   100% {
-    box-shadow: 0 10px 40px rgba(107, 188, 255, 0.25),
+    box-shadow:
+      0 10px 40px rgba(107, 188, 255, 0.25),
       inset 0 0 20px rgba(255, 255, 255, 0.1);
   }
   50% {
-    box-shadow: 0 10px 60px rgba(107, 188, 255, 0.4),
+    box-shadow:
+      0 10px 60px rgba(107, 188, 255, 0.4),
       inset 0 0 30px rgba(255, 255, 255, 0.15);
   }
 }
@@ -341,19 +353,47 @@ section {
   flex-direction: column;
 }
 
-.section-header img {
+/* Dual-layer image container */
+.section-img-container {
+  position: relative;
   width: 100%;
-  height: 200px;
-  max-width: 100%;
-  object-fit: cover;
+  height: 180px;
   border-radius: 16px;
-  box-shadow: 0 10px 30px var(--shadow-color);
+  overflow: hidden;
+}
+
+/* Blurred background layer */
+.section-img-bg {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background-size: cover;
+  background-position: center;
+  filter: blur(5px);
+  opacity: 0.6;
+  transform: scale(1.1);
+}
+
+/* Sharp foreground image */
+.section-img-main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 97%;
+  max-height: 97%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  z-index: 1;
   transition: var(--transition-smooth);
 }
 
-.section-header img:hover {
-  transform: scale(1.02);
-  box-shadow: 0 15px 40px var(--shadow-color);
+.section-img-container:hover .section-img-main {
+  /* transform: translate(-50%, -50%) scale(1.03); */
 }
 
 .section-header p {
@@ -406,7 +446,9 @@ article {
 .item.scroll-visible {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
 }
 
 .item-details {
@@ -536,14 +578,41 @@ article {
   background: var(--glass-bg);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid var(--glass-border);
+  border: none;
+  padding: 0;
 }
 
-#up-btn svg {
-  width: 20px;
-  height: 20px;
+#up-btn .progress-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+#up-btn .progress-ring-bg {
+  fill: none;
+  stroke: var(--accent-gradient);
+  stroke-width: 3;
+}
+
+#up-btn .progress-ring-fill {
+  fill: none;
+  stroke: rgb(22 40 60 / 86%);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 141.37;
+  stroke-dashoffset: 141.37;
+  transition: stroke-dashoffset 0.15s ease;
+}
+
+#up-btn .up-icon {
+  width: 18px;
+  height: 18px;
   color: white !important;
-  margin-top: 2px;
+  position: relative;
+  z-index: 1;
 }
 
 #up-btn a {
@@ -615,8 +684,8 @@ a:focus {
     font-size: 24px;
   }
 
-  .section-header img {
-    height: 160px;
+  .section-img-container {
+    height: 150px;
     border-radius: 12px;
   }
 
@@ -687,8 +756,8 @@ a:focus {
     max-width: 240px;
   }
 
-  .section-header img {
-    height: 220px;
+  .section-img-container {
+    height: 200px;
   }
 
   .section-header p {
@@ -741,7 +810,9 @@ section.scroll-hidden {
 section.scroll-visible {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
 }
 
 .section-header.scroll-hidden img {
@@ -752,7 +823,9 @@ section.scroll-visible {
 .section-header.scroll-visible img {
   opacity: 1;
   transform: scale(1);
-  transition: opacity 0.5s ease 0.2s, transform 0.5s ease 0.2s;
+  transition:
+    opacity 0.5s ease 0.2s,
+    transform 0.5s ease 0.2s;
 }
 
 /* Staggered item animations */

@@ -344,7 +344,10 @@ function displayMenu() {
       <div class="section-header">
         ${
           category.picture
-            ? `<img src="${category.picture}" alt="${category.name}"/>`
+            ? `<div class="section-img-container">
+                <div class="section-img-bg" style="background-image: url('${category.picture}')"></div>
+                <img src="${category.picture}" alt="${category.name}" class="section-img-main"/>
+              </div>`
             : ""
         }
         <p>${capitalizeFirstLetter(category.name)}</p>
@@ -412,6 +415,23 @@ const wpBtn = document.getElementById("wp-btn");
 const upBtn = document.getElementById("up-btn");
 const appearPoint = window.innerHeight * 0.1;
 
+// Get the progress ring fill element
+const progressRingFill = document.querySelector("#up-btn .progress-ring-fill");
+const circumference = 2 * Math.PI * 22.5; // radius = 22.5
+
+// Function to update up button scroll position indicator
+function updateScrollIndicator() {
+  const scrollPosition = window.scrollY;
+  const documentHeight =
+    document.documentElement.scrollHeight - window.innerHeight;
+  const scrollPercentage = Math.min(scrollPosition / documentHeight, 1);
+
+  // Update SVG stroke-dashoffset based on scroll percentage
+  // strokeDashoffset = circumference * (1 - percentage)
+  const offset = circumference * (1 - scrollPercentage);
+  progressRingFill.style.strokeDashoffset = offset;
+}
+
 window.addEventListener("scroll", () => {
   const scrollPosition = window.scrollY;
   if (scrollPosition >= appearPoint) {
@@ -419,6 +439,7 @@ window.addEventListener("scroll", () => {
       wpBtn.style.display = "flex";
     }
     upBtn.style.display = "flex";
+    updateScrollIndicator();
   } else {
     if (wpBtn) {
       wpBtn.style.display = "flex";
@@ -455,7 +476,7 @@ async function callLogApi() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
-      }
+      },
     );
 
     const uuid = await response.text();

@@ -274,52 +274,58 @@ function setupIntersectionObserver() {
 
   sections.forEach((section) => categoryObserver.observe(section));
 
-  // Observer for scroll animations
-  const scrollAnimationOptions = {
+  // Observer for section animations
+  const sectionAnimationOptions = {
     root: null,
-    rootMargin: "0px 0px -100px 0px",
-    threshold: 0.1,
+    rootMargin: "0px 0px -20% 0px",
+    threshold: 0,
   };
 
-  const scrollObserver = new IntersectionObserver((entries) => {
+  const sectionObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.remove("scroll-hidden");
         entry.target.classList.add("scroll-visible");
-
-        // Animate items within sections
-        if (entry.target.tagName === "SECTION") {
-          const items = entry.target.querySelectorAll(".item");
-          items.forEach((item, index) => {
-            setTimeout(() => {
-              item.classList.remove("scroll-hidden");
-              item.classList.add("scroll-visible");
-            }, index * 80);
-          });
-        }
       }
     });
-  }, scrollAnimationOptions);
+  }, sectionAnimationOptions);
+
+  // Observer for individual item animations - each item animates as it scrolls into view
+  const itemAnimationOptions = {
+    root: null,
+    rootMargin: "0px 0px -15% 0px",
+    threshold: 0,
+  };
+
+  const itemObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove("scroll-hidden");
+        entry.target.classList.add("scroll-visible");
+        // Stop observing once animated
+        itemObserver.unobserve(entry.target);
+      }
+    });
+  }, itemAnimationOptions);
 
   // Add scroll-hidden class to all sections and items, then observe
   sections.forEach((section, index) => {
+    const items = section.querySelectorAll(".item");
+
     // First section should be visible immediately
     if (index === 0) {
       section.classList.add("scroll-visible");
-      const items = section.querySelectorAll(".item");
-      items.forEach((item, itemIndex) => {
-        setTimeout(() => {
-          item.classList.add("scroll-visible");
-        }, itemIndex * 80);
+      items.forEach((item) => {
+        item.classList.add("scroll-visible");
       });
     } else {
       section.classList.add("scroll-hidden");
-      const items = section.querySelectorAll(".item");
       items.forEach((item) => {
         item.classList.add("scroll-hidden");
+        itemObserver.observe(item);
       });
     }
-    scrollObserver.observe(section);
+    sectionObserver.observe(section);
   });
 
   // Set first category button as active

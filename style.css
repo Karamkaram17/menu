@@ -444,15 +444,15 @@ article {
 /* Scroll animation classes */
 .item.scroll-hidden {
   opacity: 0;
-  transform: translateY(30px);
+  transform: translateY(20px);
 }
 
 .item.scroll-visible {
   opacity: 1;
   transform: translateY(0);
   transition:
-    opacity 0.6s ease,
-    transform 0.6s ease;
+    opacity 0.4s ease,
+    transform 0.4s ease;
 }
 
 .item-details {
@@ -808,60 +808,28 @@ a:focus {
 /* ===== Scroll animations ===== */
 section.scroll-hidden {
   opacity: 0;
-  transform: translateY(40px);
+  transform: translateY(30px);
 }
 
 section.scroll-visible {
   opacity: 1;
   transform: translateY(0);
   transition:
-    opacity 0.7s ease,
-    transform 0.7s ease;
+    opacity 0.5s ease,
+    transform 0.5s ease;
 }
 
 .section-header.scroll-hidden img {
   opacity: 0;
-  transform: scale(0.9);
+  transform: scale(0.95);
 }
 
 .section-header.scroll-visible img {
   opacity: 1;
   transform: scale(1);
   transition:
-    opacity 0.5s ease 0.2s,
-    transform 0.5s ease 0.2s;
-}
-
-/* Staggered item animations */
-.item:nth-child(1) {
-  transition-delay: 0.05s;
-}
-.item:nth-child(2) {
-  transition-delay: 0.1s;
-}
-.item:nth-child(3) {
-  transition-delay: 0.15s;
-}
-.item:nth-child(4) {
-  transition-delay: 0.2s;
-}
-.item:nth-child(5) {
-  transition-delay: 0.25s;
-}
-.item:nth-child(6) {
-  transition-delay: 0.3s;
-}
-.item:nth-child(7) {
-  transition-delay: 0.35s;
-}
-.item:nth-child(8) {
-  transition-delay: 0.4s;
-}
-.item:nth-child(9) {
-  transition-delay: 0.45s;
-}
-.item:nth-child(10) {
-  transition-delay: 0.5s;
+    opacity 0.4s ease 0.1s,
+    transform 0.4s ease 0.1s;
 }
 
 /* ===== Active category button highlight ===== */

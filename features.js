@@ -1,7 +1,8 @@
 /**
- * Image Lightbox feature
+ * Image Lightbox feature + Lazy Loading Item Images
  * - Tap to see full-size photo
  * - Back button closes lightbox instead of navigating away
+ * - Item images load on demand (lazy loading)
  */
 
 (function () {
@@ -11,11 +12,12 @@
   let isLightboxOpen = false;
 
   /**
-   * Initialize lightbox functionality
+   * Initialize all features
    */
   function init() {
     createLightboxElements();
     attachLightboxListeners();
+    setupItemImageLazyLoading();
   }
 
   /**
@@ -69,11 +71,24 @@
       }
     });
 
-    // Make category images clickable
+    // Make category images and item images clickable
     document.addEventListener("click", (e) => {
-      const img = e.target.closest(".section-img-main");
-      if (img) {
-        openLightbox(img.src, img.alt);
+      // Category images
+      const categoryImg = e.target.closest(".section-img-main");
+      if (categoryImg) {
+        openLightbox(categoryImg.src, categoryImg.alt);
+        return;
+      }
+
+      // Item images
+      const itemImgContainer = e.target.closest(".item-img-container");
+      if (itemImgContainer) {
+        const src = itemImgContainer.dataset.src;
+        const img = itemImgContainer.querySelector(".item-img-main");
+        const alt = img?.alt || "Item image";
+        if (src) {
+          openLightbox(src, alt);
+        }
       }
     });
   }
@@ -104,6 +119,73 @@
     if (goBack && history.state?.lightbox) {
       history.back();
     }
+  }
+
+  /**
+   * Setup lazy loading for item images
+   */
+  function setupItemImageLazyLoading() {
+    const imageObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const container = entry.target;
+            const src = container.dataset.src;
+
+            if (src) {
+              loadItemImage(container, src);
+            }
+
+            imageObserver.unobserve(container);
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: "100px 0px", // Start loading 100px before visible
+        threshold: 0,
+      },
+    );
+
+    // Observe all item image containers
+    const imageContainers = document.querySelectorAll(".item-img-container");
+    imageContainers.forEach((container) => {
+      imageObserver.observe(container);
+    });
+  }
+
+  /**
+   * Load an item image with blur background
+   */
+  function loadItemImage(container, src) {
+    const bgEl = container.querySelector(".item-img-bg");
+    const imgEl = container.querySelector(".item-img-main");
+
+    // Create a new image to preload
+    const img = new Image();
+    img.onload = () => {
+      // Set the background blur
+      if (bgEl) {
+        bgEl.style.backgroundImage = `url('${src}')`;
+        bgEl.classList.add("loaded");
+      }
+
+      // Set the main image
+      if (imgEl) {
+        imgEl.src = src;
+        imgEl.classList.add("loaded");
+      }
+
+      // Mark container as loaded
+      container.classList.add("loaded");
+    };
+
+    img.onerror = () => {
+      // Hide container on error
+      container.style.display = "none";
+    };
+
+    img.src = src;
   }
 
   // Initialize when DOM is ready

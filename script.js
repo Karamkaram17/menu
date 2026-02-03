@@ -37,6 +37,7 @@ const data = MENU_DATA.items
     isNew: c.is_New,
     isStarred: c.is_Starred,
     calories: c.calories,
+    image: c.img || null,
   }));
 
 const menuBtnDOM = document.getElementById("btn-group");
@@ -368,26 +369,36 @@ function displayMenu() {
       if (item.isStarred)
         badges.push('<span class="badge badge-starred">★</span>');
 
+      const itemImageHtml = item.image
+        ? `<div class="item-img-container" data-src="${item.image}">
+            <div class="item-img-bg"></div>
+            <img class="item-img-main" alt="${item.name}" loading="lazy" />
+          </div>`
+        : "";
+
       article.innerHTML += `
-        <div class="item">
-          <div class="item-header">
-            <div class="item-name">${item.name}</div>
-            ${
-              badges.length > 0
-                ? `<div class="item-badges">${badges.join("")}</div>`
-                : ""
-            }
-          </div>
-          <div class="item-details">
-            <div class="description">
-              ${item.description || ""}
+        <div class="item${item.image ? " has-image" : ""}">
+          ${itemImageHtml}
+          <div class="item-content">
+            <div class="item-header">
+              <div class="item-name">${item.name}</div>
               ${
-                item.calories
-                  ? `<span class="calories">${item.calories} cal</span>`
+                badges.length > 0
+                  ? `<div class="item-badges">${badges.join("")}</div>`
                   : ""
               }
             </div>
-            <div class="price">${setPrice(item.price)}</div>
+            <div class="item-details">
+              <div class="description">
+                ${item.description || ""}
+                ${
+                  item.calories
+                    ? `<span class="calories">${item.calories} cal</span>`
+                    : ""
+                }
+              </div>
+              <div class="price">${setPrice(item.price)}</div>
+            </div>
           </div>
         </div>`;
     });

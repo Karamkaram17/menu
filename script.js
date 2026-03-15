@@ -367,7 +367,7 @@ function displayMenu() {
       const badges = [];
       if (item.isNew) badges.push('<span class="badge badge-new">New</span>');
       if (item.isStarred)
-        badges.push('<span class="badge badge-starred">★</span>');
+        badges.push('<span class="badge badge-starred">⭐</span>');
 
       const itemImageHtml = item.image
         ? `<div class="item-img-container" data-src="${item.image}">

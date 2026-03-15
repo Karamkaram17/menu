@@ -497,10 +497,36 @@ article {
 }
 
 .badge-starred {
-  background: linear-gradient(135deg, #f4c430 0%, #e6b800 100%);
+  display: inline-block;
   color: #0f0f1a;
-  font-size: 11px;
-  padding: 3px 6px;
+  font-size: 16px;
+  padding: 0 3px;
+  transform-origin: center;
+  animation: star-wiggle 1.8s ease-in-out infinite;
+}
+
+@keyframes star-wiggle {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  10% {
+    transform: rotate(-12deg) scale(1.05);
+  }
+  20% {
+    transform: rotate(12deg) scale(1.05);
+  }
+  30% {
+    transform: rotate(-10deg) scale(1.04);
+  }
+  40% {
+    transform: rotate(8deg) scale(1.03);
+  }
+  50% {
+    transform: rotate(0deg) scale(1);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
 }
 
 .calories {

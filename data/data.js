@@ -107,7 +107,7 @@ const MENU_DATA = {
       "unit": null,
       "order": 1,
       "price": 6.5,
-      "img": "https://menus.blob.core.windows.net/shared/695e69fc535fb973f32ec5b4/7e1d6e5e-9630-45d5-9c86-b4a71df96f5b.jpg",
+      "img": "https://menus.blob.core.windows.net/shared/695e6657535fb973f32ec59e/a30fe3b4-53a4-47a4-a6ae-5bde4dd0232d.jpg",
       "bgImg": null,
       "hide": false,
       "calories": null,

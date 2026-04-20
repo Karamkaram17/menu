@@ -1,4 +1,5 @@
 {
+  "_dataFreshness": "Monday, 20 April 2026 14:00:00 UTC",
   "store": {
     "sm": {
       "email": "",
@@ -20,8 +21,7 @@
     "storeName": "Moonlight",
     "quote": null,
     "aboutUs": "",
-    "aboutUsTranslation": null,
-    "templateId": "moonlight_test"
+    "aboutUsTranslation": null
   },
   "categories": [],
   "sub_categories": [

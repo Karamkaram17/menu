@@ -161,37 +161,27 @@
     const bgEl = container.querySelector(".item-img-bg");
     const imgEl = container.querySelector(".item-img-main");
 
-    // Create a new image to preload
-    const img = new Image();
-    img.onload = () => {
-      // Set the background blur
+    if (!imgEl) return;
+
+    imgEl.onload = () => {
+      // Set the background blur (uses cached image, no extra request)
       if (bgEl) {
         bgEl.style.backgroundImage = `url('${src}')`;
         bgEl.classList.add("loaded");
       }
 
-      // Set the main image
-      if (imgEl) {
-        imgEl.src = src;
-        imgEl.classList.add("loaded");
-      }
-
-      // Mark container as loaded
+      imgEl.classList.add("loaded");
       container.classList.add("loaded");
     };
 
-    img.onerror = () => {
-      // Hide container on error
+    imgEl.onerror = () => {
       container.style.display = "none";
     };
 
-    img.src = src;
+    // Single network request — the <img> element itself does the loading
+    imgEl.src = src;
   }
 
-  // Initialize when DOM is ready
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", init);
-  } else {
-    setTimeout(init, 100);
-  }
+  // Expose init globally for KSS_ENGINE.onReady to call
+  window.initFeatures = init;
 })();

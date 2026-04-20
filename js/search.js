@@ -422,11 +422,6 @@
     return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   }
 
-  // Initialize when DOM is ready
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", init);
-  } else {
-    // Small delay to ensure menu is loaded
-    setTimeout(init, 100);
-  }
+  // Expose init globally for KSS_ENGINE.onReady to call
+  window.initSearch = init;
 })();

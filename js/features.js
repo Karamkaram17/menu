@@ -10,6 +10,7 @@
 
   let lightbox, lightboxImg, lightboxClose;
   let isLightboxOpen = false;
+  let lastFocusedElement = null;
 
   /**
    * Initialize all features
@@ -26,6 +27,9 @@
   function createLightboxElements() {
     lightbox = document.createElement("div");
     lightbox.id = "lightbox";
+    lightbox.setAttribute("role", "dialog");
+    lightbox.setAttribute("aria-modal", "true");
+    lightbox.setAttribute("aria-hidden", "true");
     lightbox.innerHTML = `
       <div class="lightbox-backdrop"></div>
       <div class="lightbox-content">
@@ -91,17 +95,42 @@
         }
       }
     });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key !== "Enter" && e.key !== " ") return;
+
+      const categoryImg = e.target.closest(".section-img-main");
+      if (categoryImg) {
+        e.preventDefault();
+        openLightbox(categoryImg.src, categoryImg.alt);
+        return;
+      }
+
+      const itemImgContainer = e.target.closest(".item-img-container");
+      if (itemImgContainer) {
+        e.preventDefault();
+        const src = itemImgContainer.dataset.src;
+        const img = itemImgContainer.querySelector(".item-img-main");
+        const alt = img?.alt || "Item image";
+        if (src) {
+          openLightbox(src, alt);
+        }
+      }
+    });
   }
 
   /**
    * Open lightbox with image
    */
   function openLightbox(src, alt) {
+    lastFocusedElement = document.activeElement;
     lightboxImg.src = src;
     lightboxImg.alt = alt || "Full size image";
     lightbox.classList.add("active");
+    lightbox.setAttribute("aria-hidden", "false");
     isLightboxOpen = true;
     document.body.style.overflow = "hidden";
+    lightboxClose.focus();
 
     // Push state so back button closes lightbox instead of navigating away
     history.pushState({ lightbox: true }, "");
@@ -112,8 +141,12 @@
    */
   function closeLightbox(goBack = true) {
     lightbox.classList.remove("active");
+    lightbox.setAttribute("aria-hidden", "true");
     isLightboxOpen = false;
     document.body.style.overflow = "";
+    if (lastFocusedElement && typeof lastFocusedElement.focus === "function") {
+      lastFocusedElement.focus();
+    }
 
     // Go back in history if we pushed a state
     if (goBack && history.state?.lightbox) {
@@ -150,6 +183,9 @@
     // Observe all item image containers
     const imageContainers = document.querySelectorAll(".item-img-container");
     imageContainers.forEach((container) => {
+      container.setAttribute("tabindex", "0");
+      container.setAttribute("role", "button");
+      container.setAttribute("aria-label", "View item image");
       imageObserver.observe(container);
     });
   }

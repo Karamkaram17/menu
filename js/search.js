@@ -19,7 +19,8 @@
     resultsInfo,
     prevBtn,
     nextBtn,
-    closeBtn;
+    closeBtn,
+    lastFocusedElement;
 
   /**
    * Initialize the search functionality
@@ -37,6 +38,8 @@
     searchBtn = document.createElement("button");
     searchBtn.id = "search-btn";
     searchBtn.setAttribute("aria-label", "Open search");
+    searchBtn.setAttribute("aria-controls", "search-panel");
+    searchBtn.setAttribute("aria-expanded", "false");
     searchBtn.innerHTML = `
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
         <circle cx="11" cy="11" r="8"></circle>
@@ -47,6 +50,8 @@
     // Create search panel
     searchPanel = document.createElement("div");
     searchPanel.id = "search-panel";
+    searchPanel.setAttribute("role", "search");
+    searchPanel.setAttribute("aria-hidden", "true");
     searchPanel.innerHTML = `
       <div class="search-container">
         <div class="search-input-wrapper">
@@ -54,9 +59,9 @@
             <circle cx="11" cy="11" r="8"></circle>
             <path d="m21 21-4.35-4.35"></path>
           </svg>
-          <input type="text" id="search-input" placeholder="Search menu items..." autocomplete="off" />
+          <input type="text" id="search-input" placeholder="Search menu items..." autocomplete="off" aria-label="Search menu items" />
         </div>
-        <div class="search-results-info">
+        <div class="search-results-info" aria-live="polite">
           <span class="current">0</span>
           <span>/</span>
           <span class="total">0</span>
@@ -196,9 +201,12 @@
    * Open search panel
    */
   function openSearch() {
+    lastFocusedElement = document.activeElement;
     isSearchOpen = true;
     searchPanel.classList.add("active");
     searchBtn.classList.add("hidden");
+    searchBtn.setAttribute("aria-expanded", "true");
+    searchPanel.setAttribute("aria-hidden", "false");
     searchInput.focus();
     searchInput.select();
   }
@@ -210,9 +218,14 @@
     isSearchOpen = false;
     searchPanel.classList.remove("active");
     searchBtn.classList.remove("hidden");
+    searchBtn.setAttribute("aria-expanded", "false");
+    searchPanel.setAttribute("aria-hidden", "true");
     clearSearch();
     searchInput.value = "";
     updateResultsInfo(0, 0);
+    if (lastFocusedElement && typeof lastFocusedElement.focus === "function") {
+      lastFocusedElement.focus();
+    }
   }
 
   /**

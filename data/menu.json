@@ -1,5 +1,5 @@
 {
-  "_dataFreshness": "Monday, 20 April 2026 16:00:00 UTC",
+  "_dataFreshness": "Wednesday, 27 May 2026 17:30:00 UTC",
   "store": {
     "sm": {
       "email": "",
@@ -30,72 +30,96 @@
       "menuId": "695e6657535fb973f32ec59e",
       "label": "Sandwiches",
       "order": 0,
-      "img": "",
-      "bgImg": "https://menus.blob.core.windows.net/shared/66d739121389bc24cc9d5407/f3a60723-d200-42ef-b035-010ba5d9427a.jpg",
-      "hide": false
+      "img": "https://menus.blob.core.windows.net/shared/695e6657535fb973f32ec59e/b1ef7675-7306-4106-993a-658e952d6ad4.svg",
+      "bgImg": "https://menus.blob.core.windows.net/shared/695e6657535fb973f32ec59e/ad392ec2-3f60-4f20-a5fa-dc2edfee2438.png",
+      "hide": false,
+      "note": null,
+      "sizes": [],
+      "useSizes": false
     },
     {
       "_id": "695e69fc535fb973f32ec5ba",
       "menuId": "695e6657535fb973f32ec59e",
       "label": "Burgers",
       "order": 1,
-      "img": "",
-      "bgImg": "https://menus.blob.core.windows.net/shared/66d739121389bc24cc9d5407/1039bd92-cc28-4eb1-a431-355cb9b45e15.jpg",
-      "hide": false
+      "img": "https://menus.blob.core.windows.net/shared/695e6657535fb973f32ec59e/d5c91b7f-0dbf-47a7-a0f7-09e7fa8c8878.svg",
+      "bgImg": "https://menus.blob.core.windows.net/shared/695e6657535fb973f32ec59e/2f2df725-614f-43a8-ae6a-530500db10e1.png",
+      "hide": false,
+      "note": null,
+      "sizes": [],
+      "useSizes": false
     },
     {
       "_id": "695e69fc535fb973f32ec5b7",
       "menuId": "695e6657535fb973f32ec59e",
       "label": "Pizza",
       "order": 2,
-      "img": "",
+      "img": "https://menus.blob.core.windows.net/shared/695e6657535fb973f32ec59e/eb572041-c9b6-4f78-991c-8d2157cb2b81.svg",
       "bgImg": "https://menus.blob.core.windows.net/shared/66d739121389bc24cc9d5407/d10632e7-9781-4492-b8f0-4a5b8e6d023f.jpg",
-      "hide": false
+      "hide": false,
+      "note": null,
+      "sizes": [],
+      "useSizes": false
     },
     {
       "_id": "695e69fc535fb973f32ec5bc",
       "menuId": "695e6657535fb973f32ec59e",
       "label": "Platters",
       "order": 3,
-      "img": "",
+      "img": "https://menus.blob.core.windows.net/shared/695e6657535fb973f32ec59e/83a1816e-97ca-499a-95d2-226f81eacd32.svg",
       "bgImg": "https://menus.blob.core.windows.net/shared/66d739121389bc24cc9d5407/444fcc98-7ca7-4f3d-b344-df788d919a7f.jpg",
-      "hide": false
+      "hide": false,
+      "note": null,
+      "sizes": [],
+      "useSizes": false
     },
     {
       "_id": "695e69fc535fb973f32ec5b8",
       "menuId": "695e6657535fb973f32ec59e",
       "label": "Salads",
       "order": 4,
-      "img": "",
+      "img": "https://menus.blob.core.windows.net/shared/695e6657535fb973f32ec59e/9b8ab016-0d0b-4ffc-a15b-bfe7fb8bf5a7.svg",
       "bgImg": "https://menus.blob.core.windows.net/shared/66d739121389bc24cc9d5407/310bfb74-d7dd-404a-a8a7-1c090e1294b1.jpg",
-      "hide": false
+      "hide": false,
+      "note": null,
+      "sizes": [],
+      "useSizes": false
     },
     {
       "_id": "695e69fc535fb973f32ec5bd",
       "menuId": "695e6657535fb973f32ec59e",
       "label": "Fries",
       "order": 5,
-      "img": "",
+      "img": "https://menus.blob.core.windows.net/shared/695e6657535fb973f32ec59e/1198d1f6-6572-473e-8dc1-2032eec3c9b0.svg",
       "bgImg": "https://menus.blob.core.windows.net/shared/66d739121389bc24cc9d5407/9256382e-a27f-468d-9b8c-1fc7bfe39f73.jpg",
-      "hide": false
+      "hide": false,
+      "note": null,
+      "sizes": [],
+      "useSizes": false
     },
     {
       "_id": "695e69fc535fb973f32ec5b9",
       "menuId": "695e6657535fb973f32ec59e",
       "label": "Desserts",
       "order": 6,
-      "img": "",
+      "img": "https://menus.blob.core.windows.net/shared/695e6657535fb973f32ec59e/60bfe79a-10dc-4e3b-9d3b-b4237a6487d7.svg",
       "bgImg": "https://menus.blob.core.windows.net/shared/66d739121389bc24cc9d5407/0c033fc3-b88c-4daf-8426-15ef55764a4e.jpg",
-      "hide": false
+      "hide": false,
+      "note": null,
+      "sizes": [],
+      "useSizes": false
     },
     {
       "_id": "695e69fc535fb973f32ec5be",
       "menuId": "695e6657535fb973f32ec59e",
       "label": "Drinks",
       "order": 7,
-      "img": "",
+      "img": "https://menus.blob.core.windows.net/shared/695e6657535fb973f32ec59e/d7fc2a13-7a77-4fb2-921d-da56ef588a1e.svg",
       "bgImg": "https://menus.blob.core.windows.net/shared/66d739121389bc24cc9d5407/fee15c57-143b-4169-ba66-2e8caae946ac.jpg",
-      "hide": false
+      "hide": false,
+      "note": null,
+      "sizes": [],
+      "useSizes": false
     }
   ],
   "items": [

@@ -1,5 +1,5 @@
 {
-  "_dataFreshness": "Monday, 20 April 2026 16:00:00 UTC",
+  "_dataFreshness": "Thursday, 28 May 2026 08:00:01 UTC",
   "store": {
     "sm": {
       "email": "",
@@ -31,8 +31,11 @@
       "label": "Sandwiches",
       "order": 0,
       "img": "",
-      "bgImg": "https://menus.blob.core.windows.net/shared/66d739121389bc24cc9d5407/f3a60723-d200-42ef-b035-010ba5d9427a.jpg",
-      "hide": false
+      "bgImg": "https://menus.blob.core.windows.net/shared/695e6657535fb973f32ec59e/ad392ec2-3f60-4f20-a5fa-dc2edfee2438.png",
+      "hide": false,
+      "note": null,
+      "sizes": [],
+      "useSizes": false
     },
     {
       "_id": "695e69fc535fb973f32ec5ba",
@@ -40,8 +43,11 @@
       "label": "Burgers",
       "order": 1,
       "img": "",
-      "bgImg": "https://menus.blob.core.windows.net/shared/66d739121389bc24cc9d5407/1039bd92-cc28-4eb1-a431-355cb9b45e15.jpg",
-      "hide": false
+      "bgImg": "https://menus.blob.core.windows.net/shared/695e6657535fb973f32ec59e/2f2df725-614f-43a8-ae6a-530500db10e1.png",
+      "hide": false,
+      "note": null,
+      "sizes": [],
+      "useSizes": false
     },
     {
       "_id": "695e69fc535fb973f32ec5b7",
@@ -50,7 +56,10 @@
       "order": 2,
       "img": "",
       "bgImg": "https://menus.blob.core.windows.net/shared/66d739121389bc24cc9d5407/d10632e7-9781-4492-b8f0-4a5b8e6d023f.jpg",
-      "hide": false
+      "hide": false,
+      "note": null,
+      "sizes": [],
+      "useSizes": false
     },
     {
       "_id": "695e69fc535fb973f32ec5bc",
@@ -59,7 +68,10 @@
       "order": 3,
       "img": "",
       "bgImg": "https://menus.blob.core.windows.net/shared/66d739121389bc24cc9d5407/444fcc98-7ca7-4f3d-b344-df788d919a7f.jpg",
-      "hide": false
+      "hide": false,
+      "note": null,
+      "sizes": [],
+      "useSizes": false
     },
     {
       "_id": "695e69fc535fb973f32ec5b8",
@@ -68,7 +80,10 @@
       "order": 4,
       "img": "",
       "bgImg": "https://menus.blob.core.windows.net/shared/66d739121389bc24cc9d5407/310bfb74-d7dd-404a-a8a7-1c090e1294b1.jpg",
-      "hide": false
+      "hide": false,
+      "note": null,
+      "sizes": [],
+      "useSizes": false
     },
     {
       "_id": "695e69fc535fb973f32ec5bd",
@@ -77,7 +92,10 @@
       "order": 5,
       "img": "",
       "bgImg": "https://menus.blob.core.windows.net/shared/66d739121389bc24cc9d5407/9256382e-a27f-468d-9b8c-1fc7bfe39f73.jpg",
-      "hide": false
+      "hide": false,
+      "note": null,
+      "sizes": [],
+      "useSizes": false
     },
     {
       "_id": "695e69fc535fb973f32ec5b9",
@@ -86,7 +104,10 @@
       "order": 6,
       "img": "",
       "bgImg": "https://menus.blob.core.windows.net/shared/66d739121389bc24cc9d5407/0c033fc3-b88c-4daf-8426-15ef55764a4e.jpg",
-      "hide": false
+      "hide": false,
+      "note": null,
+      "sizes": [],
+      "useSizes": false
     },
     {
       "_id": "695e69fc535fb973f32ec5be",
@@ -95,7 +116,10 @@
       "order": 7,
       "img": "",
       "bgImg": "https://menus.blob.core.windows.net/shared/66d739121389bc24cc9d5407/fee15c57-143b-4169-ba66-2e8caae946ac.jpg",
-      "hide": false
+      "hide": false,
+      "note": null,
+      "sizes": [],
+      "useSizes": false
     }
   ],
   "items": [
